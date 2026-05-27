@@ -42,27 +42,32 @@
   z-index: 2;
   width: 100%;
   padding: 60px 0 80px;
+  overflow: hidden;
 }
 
 .carousel-track {
   display: flex;
-  gap: 16px;
-  padding: 0 40px;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
+  gap: 20px;
+  width: max-content;
+  animation: scrollMarquee 25s linear infinite;
 }
 
-.carousel-track::-webkit-scrollbar {
-  display: none;
+.carousel-track:hover {
+  animation-play-state: paused;
 }
 
-/* 6 cards visible at once */
 .carousel-slide {
-  flex: 0 0 calc((100% - 5 * 16px) / 6 - 14px);
-  min-width: 180px;
-  scroll-snap-align: start;
+  width: 280px;
+  flex: 0 0 auto;
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 10px));
+  }
 }
 
 .project-card {

@@ -5,20 +5,43 @@
   padding: 100px 0 120px;
 }
 
-/* ── Large circle arc on the left ── */
+/* ── Large circles centered behind the content (double rings) ── */
 .faq-bg-circle {
   position: absolute;
-  width: 750px;
-  height: 750px;
   border-radius: 50%;
-  background-color: #000;
-  border: 3px solid rgba(60, 140, 255, 0.7);
-  /* Position so only the right arc peeks out */
-  left: -480px;
+  left: 50%;
   top: 50%;
-  transform: translateY(-40%);
   z-index: 0;
-  box-shadow: inset 0 0 0 0 transparent, 0 0 30px rgba(50, 120, 255, 0.15);
+  pointer-events: none;
+  background-color: transparent;
+}
+
+.faq-bg-circle.outer {
+  width: 850px;
+  height: 850px;
+  border: 2px dashed rgba(60, 140, 255, 0.22);
+  transform: translate(-50%, -50%);
+  animation: rotateClockwise 90s linear infinite;
+  box-shadow: 0 0 50px rgba(50, 120, 255, 0.04);
+}
+
+.faq-bg-circle.inner {
+  width: 620px;
+  height: 620px;
+  border: 1.5px solid rgba(13, 110, 253, 0.35);
+  transform: translate(-50%, -50%);
+  animation: rotateCounterClockwise 70s linear infinite;
+  box-shadow: inset 0 0 30px rgba(50, 120, 255, 0.02);
+}
+
+@keyframes rotateClockwise {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+@keyframes rotateCounterClockwise {
+  0% { transform: translate(-50%, -50%) rotate(360deg); }
+  100% { transform: translate(-50%, -50%) rotate(0deg); }
 }
 
 .faq-sec .container {

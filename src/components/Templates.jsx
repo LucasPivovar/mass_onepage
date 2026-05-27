@@ -10,6 +10,7 @@ const Templates = () => {
     { title: 'Next-Gen Tools SaaS Landing Pages' },
     { title: 'Task Management SaaS Landing Pages' },
     { title: 'Next-Gen Tools SaaS Landing Pages' },
+    { title: 'Enterprise Dashboard Solutions' },
   ];
 
   return (
@@ -28,7 +29,20 @@ const Templates = () => {
       <div className="carousel-wrapper reveal reveal-delay-2">
         <div className="carousel-track">
           {templates.map((tpl, index) => (
-            <div className="carousel-slide" key={index}>
+            <div className="carousel-slide" key={`a-${index}`}>
+              <div className="project-card">
+                <div className="project-img-placeholder">
+                  <div className="mockup-content"></div>
+                </div>
+                <div className="project-info">
+                  <h4 className="title">{tpl.title}</h4>
+                </div>
+              </div>
+            </div>
+          ))}
+          {/* Duplicate set for infinite loop */}
+          {templates.map((tpl, index) => (
+            <div className="carousel-slide" key={`b-${index}`}>
               <div className="project-card">
                 <div className="project-img-placeholder">
                   <div className="mockup-content"></div>

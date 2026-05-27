@@ -15,8 +15,9 @@ const FAQ = () => {
   return (
     <section id="faq" className="faq-sec">
 
-      {/* Large circle — positioned left, mostly off-screen, arc visible */}
-      <div className="faq-bg-circle"></div>
+      {/* Large circles — centered behind the content, double rings */}
+      <div className="faq-bg-circle outer"></div>
+      <div className="faq-bg-circle inner"></div>
 
       <div className="container">
 
