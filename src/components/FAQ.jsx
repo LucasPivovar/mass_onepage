@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './FAQ.css';
 
 const faqs = [
@@ -12,27 +12,48 @@ const faqs = [
 const FAQ = () => {
   const [open, setOpen] = useState(0);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrolled = window.scrollY;
+      const dome = document.querySelector('.dome-shape');
+      
+      if (dome) {
+        dome.style.transform = `translateX(-50%) translateY(${scrolled * 0.05}px)`;
+      }
+    };
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <section id="faq" className="faq-sec">
 
-      {/* Large circles — centered behind the content, double rings */}
-      <div className="faq-bg-circle outer"></div>
-      <div className="faq-bg-circle inner"></div>
+      {/* Two halves of one large circle background */}
+      <div className="faq-half-circle-top"></div>
+      <div className="faq-half-circle-bottom"></div>
 
       <div className="container">
 
         {/* ── Part 1: FAQ ── */}
-        <div className="faq-inner reveal">
-          <div className="faq-left">
+        <div className="faq-inner">
+          <div className="faq-left reveal">
             <span className="badge badge-dark">Fast answers</span>
             <h2 className="title">Still Curious? Find<br/>Your Answers Below</h2>
             <p>We've gathered the most common inquiries to<br/>help you get started quickly.</p>
-            <a href="#" className="btn btn-primary faq-btn">Get a Quote &rarr;</a>
+            <a href="#" className="btn btn-primary faq-btn">
+              <span>Get a Quote</span>
+              <span className="arrow-circle">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </span>
+            </a>
           </div>
 
           <div className="faq-right">
             {faqs.map((faq, i) => (
-              <div key={i} className={`faq-item ${open === i ? 'active' : ''}`}>
+              <div key={i} className={`faq-item reveal ${open === i ? 'active' : ''}`}>
                 <button className="faq-question" onClick={() => setOpen(open === i ? -1 : i)}>
                   <span>{i + 1}. {faq.q}</span>
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className={`faq-arrow ${open === i ? 'rotated' : ''}`}>
@@ -50,8 +71,8 @@ const FAQ = () => {
         </div>
 
         {/* ── Part 2: CTA ── */}
-        <div className="cta-inner reveal">
-          <div className="cta-content">
+        <div className="cta-inner">
+          <div className="cta-content reveal">
             <span className="badge badge-gray">All-In-One Solutions</span>
             <h2 className="title">Launch Your Site in<br/>Minutes with the AI<br/>Website Builder</h2>
             <p>Start creating your website today with the power of<br/>AI. Our intuitive AI website builder makes designing<br/>effortless.</p>
@@ -61,23 +82,23 @@ const FAQ = () => {
             </div>
           </div>
 
-          <div className="cta-mockup-wrap">
-            {/* Floating cursors */}
-            <div className="cta-cursor cursor-left">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 3L19 12L5 21V3Z" fill="#22c55e"/></svg>
-              <span className="pill-label green-pill">SaaS</span>
-            </div>
-            <div className="cta-cursor cursor-right">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 3L19 12L5 21V3Z" fill="#d4f84b"/></svg>
-              <span className="pill-label lime-pill">Website</span>
-            </div>
-
+          <div className="cta-mockup-wrap reveal">
             {/* App mockup frame */}
             <div className="mockup-frame">
               <div className="mockup-topbar">
                 <span className="dot-r"></span><span className="dot-y"></span><span className="dot-g"></span>
               </div>
               <div className="mockup-body">
+                {/* Static Cursors inside the mockup card */}
+                <div className="cta-cursor cursor-left">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 3L19 12L5 21V3Z" fill="#22c55e"/></svg>
+                  <span className="pill-label green-pill">SaaS</span>
+                </div>
+                <div className="cta-cursor cursor-right">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 3L19 12L5 21V3Z" fill="#d4f84b"/></svg>
+                  <span className="pill-label lime-pill">Website</span>
+                </div>
+
                 <div className="mockup-sidebar">
                   <div className="s-item active">Overview</div>
                   <div className="s-item">eCommerce</div>

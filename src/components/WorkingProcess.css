@@ -1,0 +1,377 @@
+.process-sec {
+  background-color: #08090b;
+  position: relative;
+  overflow: hidden;
+  padding-top: 100px;
+  padding-bottom: 120px;
+  z-index: 5;
+}
+
+/* Energy cables layout */
+.energy-cables-wrapper {
+  width: 100%;
+  max-width: 1100px;
+  height: 100px;
+  margin: 40px auto 0;
+  position: relative;
+  z-index: 10;
+}
+
+.energy-svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+}
+
+/* Cable path styling */
+.cable-line {
+  stroke: rgba(255, 255, 255, 0.05);
+  stroke-width: 2px;
+}
+
+/* Energy Spark Animation flowing down */
+.energy-spark {
+  stroke: #d4f84b;
+  stroke-width: 3px;
+  stroke-linecap: round;
+  stroke-dasharray: 40, 200; /* small glowing dash */
+  animation: flowEnergy 4s linear infinite;
+}
+
+.spark-left {
+  animation-delay: 0s;
+}
+
+.spark-center {
+  stroke: #22c55e;
+  animation-delay: 1.3s;
+}
+
+.spark-right {
+  animation-delay: 2.6s;
+}
+
+@keyframes flowEnergy {
+  0% {
+    stroke-dashoffset: 240;
+  }
+  100% {
+    stroke-dashoffset: -240;
+  }
+}
+
+/* Grid Layout */
+.process-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  margin-top: 0px; /* Aligned directly under the cables */
+  position: relative;
+  z-index: 5;
+}
+
+.process-card {
+  background-color: #0e1017;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 24px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 480px;
+  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden;
+  position: relative;
+}
+
+.process-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background-color: #d4f84b; /* green junction marker */
+  border-radius: 0 0 100px 100px;
+  box-shadow: 0 2px 10px rgba(212, 248, 75, 0.6);
+}
+
+.process-card:nth-child(2)::before {
+  background-color: #22c55e;
+  box-shadow: 0 2px 10px rgba(34, 197, 94, 0.6);
+}
+
+.process-card:nth-child(3)::before {
+  background-color: #d4f84b;
+  box-shadow: 0 2px 10px rgba(212, 248, 75, 0.6);
+}
+
+.process-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.step-label {
+  font-size: 13px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  letter-spacing: 0.1em;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.process-card-title {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 16px;
+  color: #fff;
+}
+
+.process-card-desc {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 30px;
+}
+
+/* Card 1 Inner Graphic Preview */
+.graphic-1 {
+  background-color: #06070a;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 24px;
+  position: relative;
+  overflow: hidden;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 2;
+}
+
+.badge-gen {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 10px;
+  padding: 4px 10px;
+  border-radius: 100px;
+  width: fit-content;
+  margin-bottom: 10px;
+}
+
+.graphic-1 h4 {
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin-bottom: 15px;
+  color: #fff;
+  z-index: 2;
+  position: relative;
+}
+
+.btn-mock {
+  background-color: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.6);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  z-index: 2;
+}
+
+.glow-ball {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  filter: blur(40px);
+  opacity: 0.65;
+  z-index: 1;
+}
+
+.ball-lime {
+  background-color: #d4f84b;
+  bottom: -30px;
+  left: -20px;
+}
+
+.ball-blue {
+  background-color: #007aff;
+  bottom: -40px;
+  right: -20px;
+}
+
+/* Card 2 Inner Graphic Preview */
+.graphic-2 {
+  background-color: #06070a;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 20px;
+  height: 180px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.editor-mockup {
+  width: 100%;
+  background-color: #0e1017;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px 12px 0 0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.editor-top {
+  height: 28px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  padding: 0 12px;
+}
+
+.tag-lime {
+  background-color: #d4f84b;
+  color: #000;
+  font-size: 8px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+}
+
+.editor-preview {
+  padding: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.editor-preview h5 {
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 0;
+  color: #fff;
+  text-align: left;
+}
+
+.preview-chart {
+  display: flex;
+  gap: 8px;
+  height: 35px;
+  align-items: flex-end;
+}
+
+.preview-chart span {
+  flex: 1;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 4px;
+  height: 40%;
+}
+.preview-chart span:nth-child(2) {
+  height: 80%;
+  background: linear-gradient(180deg, #d4f84b 0%, rgba(212, 248, 75, 0.2) 100%);
+}
+.preview-chart span:nth-child(3) {
+  height: 60%;
+}
+
+/* Card 3 Inner Graphic Preview */
+.graphic-3 {
+  background-color: #06070a;
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 24px;
+  height: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.live-box {
+  background-color: #0e1017;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 20px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.live-link {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.03);
+  padding: 4px 12px;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  width: 100%;
+  text-align: center;
+}
+
+.publish-glow-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-publish {
+  background-color: #007aff;
+  color: #fff;
+  border: none;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 8px 20px;
+  border-radius: 100px;
+  z-index: 2;
+  box-shadow: 0 4px 15px rgba(0, 122, 255, 0.4);
+}
+
+.dark-glow-circle {
+  position: absolute;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 1;
+}
+
+/* Responsive design */
+@media (max-width: 991px) {
+  .energy-cables-wrapper {
+    display: none; /* Hide cables on tablets/mobile for clean grid layout */
+  }
+  .process-grid {
+    grid-template-columns: 1fr 1fr;
+    margin-top: 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  .process-grid {
+    grid-template-columns: 1fr;
+  }
+  .process-card {
+    min-height: auto;
+  }
+}

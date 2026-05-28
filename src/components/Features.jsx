@@ -32,7 +32,7 @@ const Features = () => {
   return (
     <section id="features" className="features-sec section-padding">
       <div className="container">
-        <div className="sec-title text-center">
+        <div className="sec-title text-center reveal">
           <span className="badge">Powerful AI Features</span>
           <h2 className="title">All-in-One Tools to Power<br/>Your Website's Growth</h2>
           <p className="subtitle">Our platform comes packed with powerful features that make<br/>building and scaling your website effortless.</p>
@@ -40,7 +40,7 @@ const Features = () => {
 
         <div className="features-grid">
           {features.map((feature, index) => (
-            <div className="feature-card" key={index}>
+            <div className="feature-card reveal" key={index}>
               <div className="feature-content">
                 <span className="feature-dot">{feature.id}</span>
                 <h4 className="title">{feature.title}</h4>
@@ -54,7 +54,7 @@ const Features = () => {
           ))}
 
           {/* Full width feature card */}
-          <div className="feature-card full-width">
+          <div className="feature-card full-width reveal">
              <div className="feature-content">
                 <span className="feature-dot">05</span>
                 <h4 className="title">Wireframes Turned Into Design Guides</h4>

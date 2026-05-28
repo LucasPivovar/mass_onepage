@@ -1,38 +1,106 @@
 import { useEffect } from 'react';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 const useScrollReveal = () => {
   useEffect(() => {
-    const observe = () => {
-      const elements = document.querySelectorAll('.reveal:not(.revealed)');
-      if (elements.length === 0) return;
+    // 1. Hero Content Entrance Animation on Load
+    gsap.fromTo(
+      '.hero-content',
+      { opacity: 0, y: 50 },
+      { opacity: 1, y: 0, duration: 1.1, ease: 'power4.out', delay: 0.1 }
+    );
 
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              entry.target.classList.add('revealed');
-              observer.unobserve(entry.target);
-            }
-          });
-        },
-        { threshold: 0.05, rootMargin: '0px 0px 0px 0px' }
+    // 2. Hero Mockup Frame Entrance Animation on Load (Laptop rises from below)
+    gsap.fromTo(
+      '.placeholder-laptop',
+      { opacity: 0, scale: 0.88, y: 80 },
+      { opacity: 1, scale: 1, y: 0, duration: 1.3, ease: 'power3.out', delay: 0.3 }
+    );
+
+    // 3. Hero Floating Cursors Entrance Animation on Load
+    gsap.fromTo(
+      '.floating-cursor',
+      { opacity: 0, scale: 0.6 },
+      { opacity: 1, scale: 1, duration: 0.8, ease: 'back.out(1.7)', delay: 0.7, stagger: 0.12 }
+    );
+
+    // 4. Directional Scroll Reveal Animations using GSAP & ScrollTrigger
+
+    // Reveal from Left (Slide in from left side)
+    const leftElements = document.querySelectorAll('.reveal-left');
+    leftElements.forEach((el) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, x: -100 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.95,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 88%',
+            toggleActions: 'play none none none',
+          },
+        }
       );
+    });
 
-      elements.forEach((el) => observer.observe(el));
-      return observer;
-    };
+    // Reveal from Right (Slide in from right side)
+    const rightElements = document.querySelectorAll('.reveal-right');
+    rightElements.forEach((el) => {
+      gsap.fromTo(
+        el,
+        { opacity: 0, x: 100 },
+        {
+          opacity: 1,
+          x: 0,
+          duration: 0.95,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 88%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
+    });
 
-    // Run immediately
-    let observer = observe();
+    // Reveal from Bottom (Rise up vertically, perfect for middle cards & circles)
+    const upElements = document.querySelectorAll('.reveal-up, .reveal:not(.reveal-left):not(.reveal-right)');
+    upElements.forEach((el) => {
+      // Skip hero elements since they animate on load
+      if (
+        el.classList.contains('hero-content') || 
+        el.classList.contains('placeholder-laptop') ||
+        el.classList.contains('floating-cursor')
+      ) {
+        return;
+      }
+      
+      gsap.fromTo(
+        el,
+        { opacity: 0, y: 80 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: 1.0,
+          ease: 'power2.out',
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 88%',
+            toggleActions: 'play none none none',
+          },
+        }
+      );
+    });
 
-    // Also run after short delays to catch late-rendered elements
-    const t1 = setTimeout(() => { observer = observe(); }, 200);
-    const t2 = setTimeout(() => { observer = observe(); }, 600);
-
+    // Clean up ScrollTriggers on unmount
     return () => {
-      clearTimeout(t1);
-      clearTimeout(t2);
-      if (observer) observer.disconnect();
+      ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
     };
   }, []);
 };
