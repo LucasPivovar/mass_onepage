@@ -16,13 +16,11 @@ const Header = () => {
 
           <nav className="main-menu" aria-label="Main Navigation">
             <ul>
-              <li><a href="#home">Início</a></li>
-              <li><a href="#features">Recursos</a></li>
-              <li><a href="#templates">Funcionalidades</a></li>
-              <li><a href="#why-choose-us">Vantagens</a></li>
-              <li><a href="#pricing">Planos</a></li>
-              <li><a href="#reviews">Depoimentos</a></li>
-              <li><a href="#faq">FAQ</a></li>
+              <li><a href="/quem-somos">Quem Somos</a></li>
+              <li><a href="/#como-funciona">Como Funciona</a></li>
+              <li><a href="/#templates">Funcionalidades</a></li>
+              <li><a href="/#pricing">Planos</a></li>
+              <li><a href="/#footer">Contato</a></li>
             </ul>
           </nav>
 

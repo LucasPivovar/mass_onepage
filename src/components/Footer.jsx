@@ -9,39 +9,42 @@ const Footer = () => {
           <div className="footer-brand">
             <a href="/" className="logo-text">
               <span className="logo-icon"></span>
-              Sasico
+              MassFlow
             </a>
-            <p>AI transforms the way you build. Craft beautiful, responsive, and high-performing websites faster than ever.</p>
+            <p>MassFlow transforma a forma como você se comunica. Crie fluxos, automatize atendimentos e escale sua operação de vendas de forma simples e inteligente.</p>
+            <div className="footer-socials">
+              <a href="#" className="social-icon" aria-label="Facebook"><i className="fa-brands fa-facebook-f"></i></a>
+              <a href="#" className="social-icon" aria-label="YouTube"><i className="fa-brands fa-youtube"></i></a>
+              <a href="#" className="social-icon" aria-label="Instagram"><i className="fa-brands fa-instagram"></i></a>
+              <a href="#" className="social-icon" aria-label="LinkedIn"><i className="fa-brands fa-linkedin-in"></i></a>
+            </div>
           </div>
           <div className="footer-links">
             <div className="footer-col">
-              <h5>Product</h5>
+              <h5>Empresa</h5>
               <ul>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#templates">Templates</a></li>
-                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="/quem-somos">Quem Somos</a></li>
+                <li><a href="/#features">Nossa Solução</a></li>
               </ul>
             </div>
             <div className="footer-col">
-              <h5>Company</h5>
+              <h5>Institucional</h5>
               <ul>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Careers</a></li>
+                <li><a href="#">Termos de Uso</a></li>
+                <li><a href="#">Politica de Privacidade</a></li>
               </ul>
             </div>
             <div className="footer-col">
-              <h5>Support</h5>
+              <h5>Suporte</h5>
               <ul>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#">Contact</a></li>
-                <li><a href="#">Privacy Policy</a></li>
+                <li><a href="#">Status de Rede</a></li>
+                <li><a href="/#footer">Contato</a></li>
               </ul>
             </div>
           </div>
         </div>
         <div className="footer-bottom">
-          <p>&copy; {new Date().getFullYear()} Sasico. All rights reserved.</p>
+          <p>&copy; 2026 MassFlow. Todos os direitos reservados.</p>
         </div>
       </div>
     </footer>

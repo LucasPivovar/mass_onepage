@@ -42,7 +42,6 @@ const Hero = () => {
       <div className="container">
         <div className="hero-info">
           <div className="hero-content">
-            <span className="badge">Disparos em Massa Inteligente</span>
             <h1 className="title">Tudo o que sua operação precisa para escalar em um só Lugar</h1>
             <p className="subtitle">
               Automatize atendimentos, alcance milhares de contatos e gerencie múltiplos canais sem trocar de plataforma.
@@ -54,30 +53,20 @@ const Hero = () => {
           </div>
           
           {/* Laptop Mockup Wrapper with Negative Margin-Bottom to Overlap the Next Section */}
-          <div className="hero-image-wrapper">
+          <div id="como-funciona" className="hero-image-wrapper">
             <div className="placeholder-laptop">
                <div className="placeholder-screen">
-                  {/* Detailed screen preview imitating real SaaS UI */}
-                  <div className="placeholder-ui">
-                    <div className="ui-header">
-                      <div className="ui-dots"><span className="ui-dot"></span><span className="ui-dot"></span><span className="ui-dot"></span></div>
-                      <div className="ui-search">sasico.com/editor</div>
-                    </div>
-                    <div className="ui-body">
-                      <div className="ui-sidebar">
-                        <div className="ui-nav-item active">Overview</div>
-                        <div className="ui-nav-item">Campaigns</div>
-                        <div className="ui-nav-item">Analytics</div>
-                        <div className="ui-nav-item">Settings</div>
-                      </div>
-                      <div className="ui-content">
-                        <div className="ui-card">
-                          <h3>Next-Gen Tools for High-Performing Teams</h3>
-                          <div className="ui-chart-line"></div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
+                  {/* Detailed screen preview displaying a live demo loop video */}
+                  <video 
+                    loop 
+                    autoPlay 
+                    muted 
+                    playsInline 
+                    className="laptop-screen-video"
+                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                  >
+                    <source src="https://cdn.pixabay.com/video/2021/04/12/70868-537482598_tiny.mp4" type="video/mp4" />
+                  </video>
                </div>
             </div>
           </div>

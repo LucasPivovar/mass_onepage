@@ -9,23 +9,32 @@ import Pricing from './components/Pricing'
 import Testimonials from './components/Testimonials'
 import FAQ from './components/FAQ'
 import Footer from './components/Footer'
+import QuemSomos from './components/QuemSomos'
 import useScrollReveal from './hooks/useScrollReveal'
 
 function App() {
   useScrollReveal();
 
+  const isQuemSomos = window.location.pathname === '/quem-somos';
+
   return (
     <>
       <Header />
       <main>
-        <Hero />
-        <WorkingProcess />
-        <Features />
-        <Templates />
-        <WhyChooseUs />
-        <Pricing />
-        <Testimonials />
-        <FAQ />
+        {isQuemSomos ? (
+          <QuemSomos />
+        ) : (
+          <>
+            <Hero />
+            <WorkingProcess />
+            <Features />
+            <Templates />
+            <WhyChooseUs />
+            <Pricing />
+            <Testimonials />
+            <FAQ />
+          </>
+        )}
       </main>
       <Footer />
     </>
@@ -33,3 +42,4 @@ function App() {
 }
 
 export default App
+
