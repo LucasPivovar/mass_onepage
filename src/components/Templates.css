@@ -6,18 +6,18 @@
   padding-bottom: 70px;
 }
 
-/* Dome shape — inverted U (∩) */
+/* Dome shape — perfect circle (●) */
 .dome-shape {
   position: absolute;
   top: -160px;
   left: 50%;
   transform: translateX(-50%);
-  width: 66vw;
-  height: 580px;
-  border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+  width: 1000px;
+  height: 1000px;
+  border-radius: 50%;
   background-color: #f3e8ff;
-  border-top: 26px solid rgba(168, 85, 247, 0.4);
-  box-shadow: 0 -15px 40px rgba(168, 85, 247, 0.15);
+  border: 20px solid rgba(168, 85, 247, 0.4);
+  box-shadow: 0 0 50px rgba(168, 85, 247, 0.2);
   z-index: 0;
 }
 
