@@ -5,26 +5,26 @@ const Features = () => {
   const features = [
     {
       id: '01',
-      title: 'Drag & Drop Editor — No Coding Required',
-      description: 'Easily design and customize your website with our intuitive drag-and-drop editor—no coding needed.',
+      title: 'Múltiplas Conexões',
+      description: 'Conecte e gerencie múltiplos números em uma única plataforma. Organize operações por cliente, equipe ou campanha mantendo total controle sobre cada conexão ativa.',
       imgClass: 'feature-img-1'
     },
     {
       id: '02',
-      title: 'AI-Driven Content & Layout Guidance',
-      description: 'Leverage AI to instantly generate engaging copy and visually appealing layouts for your website.',
+      title: 'Painel de Controle em Tempo Real',
+      description: 'Acompanhe contatos ativos, disparos realizados, taxa de leitura, volume mensal e desempenho das campanhas em um único dashboard.',
       imgClass: 'feature-img-2'
     },
     {
       id: '03',
-      title: '200+ Ready-to-Use Templates',
-      description: 'Get a head start with 200+ professionally designed templates ready to use for your projects.',
+      title: 'Campanhas Inteligentes',
+      description: 'Crie campanhas segmentadas, acompanhe entregas, leituras e resultados em tempo real. Controle campanhas ativas, agendadas, pausadas ou concluídas com total visibilidade operacional.',
       imgClass: 'feature-img-3'
     },
     {
       id: '04',
-      title: 'Optimized for Speed & Conversions',
-      description: 'Fast, smooth, and conversion-ready—designed to engage visitors and drive results instantly.',
+      title: 'Automações Pós-Disparo',
+      description: 'Transforme respostas em processos automatizados. Acione fluxos, aplique tags, valide informações, distribua leads e conduza cada contato automaticamente através da jornada definida.',
       imgClass: 'feature-img-4'
     }
   ];
@@ -33,9 +33,8 @@ const Features = () => {
     <section id="features" className="features-sec section-padding">
       <div className="container">
         <div className="sec-title text-center reveal">
-          <span className="badge">Powerful AI Features</span>
-          <h2 className="title">All-in-One Tools to Power<br/>Your Website's Growth</h2>
-          <p className="subtitle">Our platform comes packed with powerful features that make<br/>building and scaling your website effortless.</p>
+          <h2 className="title">Transforme disparos em Operações Inteligentes</h2>
+          <p className="subtitle">Gerencie múltiplas conexões, automatize campanhas, acompanhe resultados em tempo real e transforme cada contato em uma nova oportunidade.</p>
         </div>
 
         <div className="features-grid">
@@ -57,8 +56,8 @@ const Features = () => {
           <div className="feature-card full-width reveal">
              <div className="feature-content">
                 <span className="feature-dot">05</span>
-                <h4 className="title">Wireframes Turned Into Design Guides</h4>
-                <p>Turn your initial wireframes into comprehensive design guides that ensure clarity and consistency.</p>
+                <h4 className="title">Relatórios e Performance</h4>
+                <p>Acompanhe métricas de entrega, leitura, engajamento e desempenho por campanha. Identifique oportunidades, compare resultados e tome decisões baseadas em dados reais.</p>
              </div>
              <div className="feature-img-placeholder feature-img-5">
                 <div className="inner-card"></div>

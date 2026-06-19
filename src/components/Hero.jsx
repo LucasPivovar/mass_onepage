@@ -42,14 +42,14 @@ const Hero = () => {
       <div className="container">
         <div className="hero-info">
           <div className="hero-content">
-            <span className="badge">500k+ Global trust our platform.</span>
-            <h1 className="title">Build Quality Website <br/> Faster With AI</h1>
+            <span className="badge">Disparos em Massa Inteligente</span>
+            <h1 className="title">Tudo o que sua operação precisa para escalar em um só Lugar</h1>
             <p className="subtitle">
-              AI transforms the way you build. Craft beautiful, responsive, and high-performing websites faster than ever with intelligence.
+              Automatize atendimentos, alcance milhares de contatos e gerencie múltiplos canais sem trocar de plataforma.
             </p>
             <div className="hero-btn">
-              <a href="#" className="btn btn-primary">Start for free &rarr;</a>
-              <a href="#" className="btn btn-outline">Build with AI &rarr;</a>
+              <a href="#" className="btn btn-primary">Começar Grátis &rarr;</a>
+              <a href="#" className="btn btn-outline">Ver Recursos &rarr;</a>
             </div>
           </div>
           
@@ -86,7 +86,7 @@ const Hero = () => {
 
       {/* Brand Logos Ticker - Overlapped by Laptop Mockup */}
       <div className="hero-logos-container reveal reveal-up">
-        <p className="logos-title">Trusted by over 1.7 million companies worldwide</p>
+        <p className="logos-title">Confiado por mais de 1,7 milhão de empresas em todo o mundo</p>
         <div className="logos-slider">
           <div className="logos-track">
             <span><i className="fa-brands fa-dropbox"></i> Dropbox</span>

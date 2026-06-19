@@ -42,14 +42,70 @@
   border-color: var(--border-color);
 }
 
-.why-card.card-dark-deep {
-  background-color: #faf9fc;
-  border-color: var(--border-color);
+.why-card.card-colored-effect {
+  background: linear-gradient(135deg, #7e22ce 0%, #a855f7 50%, #4f46e5 100%);
+  border: 1px solid rgba(168, 85, 247, 0.3);
+  color: #ffffff;
+  box-shadow: 0 15px 35px rgba(168, 85, 247, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.why-card.card-colored-effect:hover {
+  transform: translateY(-6px);
+  border-color: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 20px 45px rgba(168, 85, 247, 0.4);
+}
+
+.why-card.card-colored-effect .why-icon {
+  color: #ffffff !important;
+}
+
+.why-card.card-colored-effect .why-card-title {
+  color: #ffffff;
+}
+
+.why-card.card-colored-effect .why-card-desc {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* Ambient glow spheres for interactive effect */
+.card-effect-sphere {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(35px);
+  opacity: 0.6;
+  z-index: 1;
+  pointer-events: none;
+  transition: transform 0.5s ease;
+}
+
+.sphere-1 {
+  width: 120px;
+  height: 120px;
+  background-color: rgba(212, 248, 75, 0.35); /* Neon lime glow */
+  top: -30px;
+  right: -30px;
+}
+
+.sphere-2 {
+  width: 140px;
+  height: 140px;
+  background-color: rgba(6, 182, 212, 0.4); /* Cyan glow */
+  bottom: -40px;
+  left: -20px;
+}
+
+.why-card.card-colored-effect:hover .sphere-1 {
+  transform: scale(1.2) translate(-10px, 10px);
+}
+
+.why-card.card-colored-effect:hover .sphere-2 {
+  transform: scale(1.15) translate(10px, -10px);
 }
 
 .why-card.card-dark:hover,
-.why-card.card-dark-light:hover,
-.why-card.card-dark-deep:hover {
+.why-card.card-dark-light:hover {
   transform: translateY(-6px);
   border-color: rgba(168, 85, 247, 0.2);
   box-shadow: 0 15px 35px rgba(168, 85, 247, 0.05);

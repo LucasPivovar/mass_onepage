@@ -9,11 +9,11 @@
 /* Dome shape — inverted U (∩) */
 .dome-shape {
   position: absolute;
-  top: -90px;
+  top: -160px;
   left: 50%;
   transform: translateX(-50%);
-  width: 46vw;
-  height: 460px;
+  width: 70vw;
+  height: 580px;
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
   background-color: #f3e8ff;
   border-top: 26px solid rgba(168, 85, 247, 0.4);
@@ -28,6 +28,8 @@
 
 .sec-title-light .title {
   color: var(--text-main);
+  font-size: 34px;
+  line-height: 1.25;
 }
 
 .badge-dark {
@@ -118,6 +120,9 @@
   .templates-sec {
     padding-top: 100px;
     padding-bottom: 40px;
+  }
+  .sec-title-light .title {
+    font-size: 28px;
   }
   .dome-shape {
     display: none;

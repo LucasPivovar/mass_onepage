@@ -5,12 +5,26 @@ const Templates = () => {
   const sectionRef = useRef(null);
 
   const templates = [
-    { title: 'Digital Marketing Agency Landing Pages' },
-    { title: 'Task Management SaaS Landing Pages' },
-    { title: 'Next-Gen Tools SaaS Landing Pages' },
-    { title: 'Task Management SaaS Landing Pages' },
-    { title: 'Next-Gen Tools SaaS Landing Pages' },
-    { title: 'Enterprise Dashboard Solutions' },
+    { title: 'Integração com OpenAI' },
+    { title: 'WhatsApp Business' },
+    { title: 'Instagram Direct' },
+    { title: 'TikTok Business' },
+    { title: 'Telegram Bots' },
+    { title: 'Fluxos Inteligentes' },
+    { title: 'Construtor de Bots' },
+    { title: 'Inbox Omnichannel' },
+    { title: 'Gestão de Contatos' },
+    { title: 'Webhooks e APIs' },
+    { title: 'Integrações Externas' },
+    { title: 'Chat ao Vivo' },
+    { title: 'Agentes de IA' },
+    { title: 'Multiusuários' },
+    { title: 'Gestão de Equipes' },
+    { title: 'Controle de Permissões' },
+    { title: 'Relatórios Analíticos' },
+    { title: 'Dashboard em Tempo Real' },
+    { title: 'Tags Inteligentes' },
+    { title: 'Integrações com E-Commerce' }
   ];
 
   return (
@@ -20,9 +34,8 @@ const Templates = () => {
 
       <div className="container">
         <div className="sec-title text-center sec-title-light reveal">
-          <span className="badge badge-dark">500+ Pre-Made Templates</span>
-          <h2 className="title">Save Time with Over 500<br/>Designer-Ready Templates</h2>
-          <p className="subtitle">Speed up your design process with over 500 professionally<br/>crafted, ready-to-use templates.</p>
+          <h2 className="title">Mais de 50 funcionalidades para<br/>Automatizar e Escalar sua Operação.</h2>
+          <p className="subtitle">Da automação de conversas ao atendimento omnichannel, a MassFlow reúne<br/>tudo o que sua empresa precisa para crescer sem depender de múltiplas plataformas.</p>
         </div>
       </div>
 

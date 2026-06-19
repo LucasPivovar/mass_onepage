@@ -7,8 +7,7 @@ const WorkingProcess = () => {
       <div className="container">
         {/* Title */}
         <div className="sec-title text-center reveal reveal-up">
-          <span className="badge badge-dark">Working Process</span>
-          <h2 className="title">Build Conversion-Ready<br/>Pages Effortlessly in 3 Steps.</h2>
+          <h2 className="title">Tudo o que sua operação precisa para escalar em uma só Lugar</h2>
         </div>
 
         {/* Energy Flow Cables Overlay */}
@@ -35,9 +34,8 @@ const WorkingProcess = () => {
           {/* Card 1: Start Plan */}
           <div className="process-card reveal reveal-left">
             <div className="card-header-info">
-              <span className="step-label">Start Plan</span>
-              <h3 className="process-card-title">Use a Template or Design<br/>Your Own Mind!</h3>
-              <p className="process-card-desc">Start your website journey by selecting a ready-made template or creating your design from scratch.</p>
+              <h3 className="process-card-title">Disparos em Massa<br/>Inteligentes</h3>
+              <p className="process-card-desc">Envie campanhas para milhares de contatos através do WhatsApp, Telegram e outros canais. Segmente audiências, personalize mensagens e acompanhe resultados em tempo real.</p>
             </div>
             
             {/* Card 1 Inner Preview Graphic */}
@@ -55,9 +53,8 @@ const WorkingProcess = () => {
           {/* Card 2: Structure */}
           <div className="process-card reveal reveal-up">
             <div className="card-header-info">
-              <span className="step-label">Structure</span>
-              <h3 className="process-card-title">Customize with Drag &<br/>Drop Editor</h3>
-              <p className="process-card-desc">Easily personalize your website using our intuitive drag-and-drop editor, no coding required.</p>
+              <h3 className="process-card-title">Centralização<br/>Omnichannel</h3>
+              <p className="process-card-desc">Conecte WhatsApp, Instagram, Telegram, TikTok e outros canais em uma única caixa de entrada. Sua equipe acompanha todas as conversas sem perder contexto.</p>
             </div>
 
             {/* Card 2 Inner Preview Graphic */}
@@ -79,9 +76,8 @@ const WorkingProcess = () => {
           {/* Card 3: Go Live */}
           <div className="process-card reveal reveal-right">
             <div className="card-header-info">
-              <span className="step-label">Go Live</span>
-              <h3 className="process-card-title">Polish Your Site and<br/>Launch</h3>
-              <p className="process-card-desc">Finalize every detail of your website and get it ready for the world. Optimize performance, ensure mobile.</p>
+              <h3 className="process-card-title">Discador e<br/>Chamadas Integradas</h3>
+              <p className="process-card-desc">Realize e receba chamadas diretamente pela plataforma. Automatize processos comerciais, registre interações e mantenha todo o histórico centralizado.</p>
             </div>
 
             {/* Card 3 Inner Preview Graphic */}
