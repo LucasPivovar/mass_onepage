@@ -4,7 +4,7 @@
   text-align: center;
   position: relative;
   overflow: hidden;
-  background-color: #0c0e12; /* Slightly lighter premium dark background */
+  background-color: var(--bg-color);
 }
 
 .hero-sec::before {
@@ -15,7 +15,7 @@
   transform: translateX(-50%);
   width: 60vw;
   height: 60vw;
-  background: radial-gradient(circle, rgba(0, 122, 255, 0.28) 0%, rgba(13, 14, 18, 0) 70%); /* Brighter blue glow center */
+  background: radial-gradient(circle, rgba(168, 85, 247, 0.12) 0%, rgba(255, 255, 255, 0) 70%); /* Brighter purple glow center */
   z-index: 0;
   border-radius: 50%;
 }
@@ -35,7 +35,7 @@
   position: absolute;
   width: 4px;
   height: 4px;
-  background-color: rgba(255, 255, 255, 0.35);
+  background-color: rgba(168, 85, 247, 0.3);
   border-radius: 50%;
   animation: pulseParticle 3s infinite ease-in-out;
 }
@@ -128,7 +128,7 @@
   margin-bottom: 24px;
   letter-spacing: -0.03em;
   line-height: 1.1;
-  color: #fff;
+  color: var(--text-main);
 }
 
 .hero-content .subtitle {
@@ -187,11 +187,11 @@
 .placeholder-screen {
   width: 100%;
   height: 100%;
-  background-color: #0b0c10;
+  background-color: #ffffff;
   border-radius: 12px 12px 0 0;
   overflow: hidden;
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--border-color);
 }
 
 /* Realistic SaaS UI Preview inside Screen */
@@ -200,18 +200,18 @@
   height: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #0b0c10;
+  background-color: #ffffff;
   font-family: sans-serif;
-  color: #fff;
+  color: var(--text-main);
 }
 
 .ui-header {
   height: 38px;
-  background-color: #14161f;
+  background-color: #f3f4f6;
   display: flex;
   align-items: center;
   padding: 0 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-bottom: 1px solid var(--border-color);
   position: relative;
 }
 
@@ -231,10 +231,10 @@
 
 .ui-search {
   margin-left: 24px;
-  background-color: #08090b;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
   font-size: 11px;
-  color: rgba(255, 255, 255, 0.4);
+  color: var(--text-muted);
   padding: 3px 20px;
   border-radius: 6px;
   width: 160px;
@@ -248,8 +248,8 @@
 
 .ui-sidebar {
   width: 150px;
-  background-color: #0e1017;
-  border-right: 1px solid rgba(255, 255, 255, 0.06);
+  background-color: #f9fafb;
+  border-right: 1px solid var(--border-color);
   padding: 20px 10px;
   display: flex;
   flex-direction: column;
@@ -260,13 +260,13 @@
   font-size: 11px;
   padding: 8px 12px;
   border-radius: 6px;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--text-muted);
   text-align: left;
 }
 
 .ui-nav-item.active {
-  background-color: rgba(255, 255, 255, 0.08);
-  color: #fff;
+  background-color: rgba(168, 85, 247, 0.1);
+  color: var(--primary);
   font-weight: 600;
 }
 
@@ -276,17 +276,17 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: radial-gradient(circle at top right, rgba(0, 122, 255, 0.1) 0%, transparent 60%);
+  background: radial-gradient(circle at top right, rgba(168, 85, 247, 0.1) 0%, transparent 60%);
 }
 
 .ui-card {
-  background-color: #141620;
-  border: 1px solid rgba(255, 255, 255, 0.08);
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
   border-radius: 12px;
   padding: 24px;
   text-align: left;
   max-width: 320px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: var(--shadow-lg);
 }
 
 .ui-card h3 {
@@ -299,15 +299,15 @@
 .ui-chart-line {
   height: 4px;
   width: 100%;
-  background: linear-gradient(90deg, #007aff 0%, #22c55e 100%);
+  background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
   border-radius: 2px;
   margin-top: 15px;
 }
 
 /* Brand Logos Ticker Style */
 .hero-logos-container {
-  background-color: #06070a;
-  border-top: 1px solid rgba(255, 255, 255, 0.03);
+  background-color: #f9fafb;
+  border-top: 1px solid var(--border-color);
   padding: 180px 0 50px; /* extra top padding to give room for overlapping laptop */
   position: relative;
   z-index: 2;
@@ -316,7 +316,7 @@
 
 .logos-title {
   font-size: 15px;
-  color: rgba(255, 255, 255, 0.45);
+  color: var(--text-muted);
   font-weight: 500;
   margin-bottom: 28px;
   text-transform: uppercase;
@@ -340,7 +340,7 @@
 .logos-track span {
   font-size: 20px;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--text-main);
   display: inline-flex;
   align-items: center;
   gap: 10px;
@@ -349,7 +349,7 @@
 
 .logos-track span i {
   font-size: 24px;
-  color: rgba(255, 255, 255, 0.85);
+  color: var(--primary);
 }
 
 @keyframes logoScroll {
@@ -363,5 +363,26 @@
   }
   .placeholder-laptop {
     width: 95%;
+  }
+  .floating-cursor {
+    display: none !important;
+  }
+  .hero-image-wrapper {
+    margin-top: 30px;
+    margin-bottom: -60px;
+  }
+  .hero-logos-container {
+    padding: 100px 0 40px;
+  }
+  .hero-btn {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    max-width: 320px;
+    margin: 0 auto;
+    gap: 12px;
+  }
+  .hero-btn .btn {
+    width: 100%;
   }
 }

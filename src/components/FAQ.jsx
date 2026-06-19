@@ -91,11 +91,11 @@ const FAQ = () => {
               <div className="mockup-body">
                 {/* Static Cursors inside the mockup card */}
                 <div className="cta-cursor cursor-left">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 3L19 12L5 21V3Z" fill="#22c55e"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 3L19 12L5 21V3Z" fill="#7e22ce"/></svg>
                   <span className="pill-label green-pill">SaaS</span>
                 </div>
                 <div className="cta-cursor cursor-right">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 3L19 12L5 21V3Z" fill="#d4f84b"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M5 3L19 12L5 21V3Z" fill="#a855f7"/></svg>
                   <span className="pill-label lime-pill">Website</span>
                 </div>
 

@@ -12,7 +12,7 @@ const reviews = [
 
 const initials = (name) => name.split(' ').map(n => n[0]).join('');
 
-const colors = ['#007aff', '#8B5CF6', '#FF5722', '#10b981', '#f59e0b', '#ec4899'];
+const colors = ['#A855F7', '#8B5CF6', '#FF5722', '#10b981', '#f59e0b', '#ec4899'];
 
 const Testimonials = () => {
   return (

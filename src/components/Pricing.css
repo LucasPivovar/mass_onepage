@@ -1,5 +1,5 @@
 .pricing-sec {
-  background-color: var(--bg-color);
+  background-color: var(--bg-alt);
 }
 
 .pricing-grid {
@@ -150,4 +150,17 @@
 
 .price-features li svg {
   flex-shrink: 0;
+}
+
+@media (max-width: 768px) {
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+  .price-card.popular {
+    transform: none;
+  }
+  .price-card.popular:hover {
+    transform: translateY(-5px);
+  }
 }

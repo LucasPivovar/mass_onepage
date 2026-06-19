@@ -1,5 +1,5 @@
 .why-sec {
-  background-color: #08090b;
+  background-color: var(--bg-color);
   position: relative;
   overflow: hidden;
   padding-top: 100px;
@@ -28,57 +28,57 @@
 .why-card.card-dark,
 .why-card.card-dark-light,
 .why-card.card-dark-deep {
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  border: 1px solid var(--border-color);
   color: var(--text-main);
   transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .why-card.card-dark {
-  background-color: #13141a;
+  background-color: #f9fafb;
 }
 
 .why-card.card-dark-light {
-  background-color: #101117; /* Rich dark card */
-  border-color: rgba(255, 255, 255, 0.07);
+  background-color: #fcfbfe;
+  border-color: var(--border-color);
 }
 
 .why-card.card-dark-deep {
-  background-color: #06070a; /* Deepest black card */
-  border-color: rgba(255, 255, 255, 0.05);
+  background-color: #faf9fc;
+  border-color: var(--border-color);
 }
 
 .why-card.card-dark:hover,
 .why-card.card-dark-light:hover,
 .why-card.card-dark-deep:hover {
   transform: translateY(-6px);
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+  border-color: rgba(168, 85, 247, 0.2);
+  box-shadow: 0 15px 35px rgba(168, 85, 247, 0.05);
 }
 
 .why-card.card-blue {
-  background-color: #007aff;
+  background-color: var(--primary);
   color: #fff;
   border: 1px solid transparent;
 }
 
 .why-card.card-blue:hover {
   transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(0, 122, 255, 0.25);
+  box-shadow: 0 15px 35px rgba(168, 85, 247, 0.25);
 }
 
 .why-card.card-lime {
-  background-color: #d4f84b;
-  color: #000;
-  border: 1px solid transparent;
+  background-color: #faf5ff;
+  color: #7e22ce;
+  border: 1px solid rgba(168, 85, 247, 0.15);
 }
 
 .why-card.card-lime .why-card-desc {
-  color: rgba(0, 0, 0, 0.7);
+  color: rgba(126, 34, 206, 0.85);
 }
 
 .why-card.card-lime:hover {
   transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(212, 248, 75, 0.25);
+  box-shadow: 0 15px 35px rgba(168, 85, 247, 0.15);
 }
 
 /* Tall Card Specifics */
@@ -106,7 +106,7 @@
 }
 
 .card-blue .why-icon { color: #fff; }
-.card-lime .why-icon { color: #000; }
+.card-lime .why-icon { color: #7e22ce; }
 .card-dark .why-icon { color: var(--primary); }
 
 .why-card-title {
@@ -150,15 +150,15 @@
   min-height: 440px;
   flex-shrink: 0;
   border-radius: 50%;
-  /* No glow/gradient inside: matches solid card background color */
-  background-color: #0e1017;
+  /* Matches solid card background color */
+  background-color: #f3e8ff;
   /* Even thinner elegant border: peaks at 8px, and massive premium neon glow */
-  border-top: 8px solid #00a2ff;
-  border-left: 2px solid rgba(0, 162, 255, 0.3);
-  border-right: 2px solid rgba(0, 162, 255, 0.3);
-  border-bottom: 2px solid rgba(0, 162, 255, 0.3);
+  border-top: 8px solid var(--primary);
+  border-left: 2px solid rgba(168, 85, 247, 0.15);
+  border-right: 2px solid rgba(168, 85, 247, 0.15);
+  border-bottom: 2px solid rgba(168, 85, 247, 0.15);
   /* Significantly larger and brighter neon glow radiating outwards */
-  box-shadow: 0 -25px 60px rgba(0, 162, 255, 0.75);
+  box-shadow: 0 -25px 60px rgba(168, 85, 247, 0.15);
   z-index: 1;
   pointer-events: none;
 }
@@ -168,7 +168,7 @@
   display: inline-flex;
   align-items: center;
   gap: 16px;
-  background-color: #007aff;
+  background-color: var(--secondary);
   color: #fff;
   font-size: 15px;
   font-weight: 700;
@@ -181,9 +181,9 @@
 }
 
 .why-btn-premium:hover {
-  background-color: #0066d6;
+  background-color: var(--primary-hover);
   transform: translateY(-2px);
-  box-shadow: 0 8px 20px rgba(0, 122, 255, 0.3);
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.3);
 }
 
 .btn-arrow-circle {
@@ -230,5 +230,8 @@
   .why-card.card-tall {
     grid-column: auto;
     min-height: 350px;
+  }
+  .card-blue-arc {
+    display: none;
   }
 }

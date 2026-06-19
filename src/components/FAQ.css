@@ -1,5 +1,5 @@
 .faq-sec {
-  background-color: var(--bg-color);
+  background-color: var(--bg-lavender);
   position: relative;
   overflow: hidden;
   padding: 100px 0 120px;
@@ -14,9 +14,9 @@
   width: 38vw;
   height: 380px;
   border-radius: 50% 50% 0 0 / 100% 100% 0 0;
-  background-color: #0d0f1a;
-  border-top: 26px solid rgba(100, 160, 255, 0.72);
-  box-shadow: 0 -15px 40px rgba(100, 160, 255, 0.45);
+  background-color: #f3e8ff;
+  border-top: 26px solid rgba(168, 85, 247, 0.4);
+  box-shadow: 0 -15px 40px rgba(168, 85, 247, 0.15);
   z-index: 0;
   pointer-events: none;
 }
@@ -29,8 +29,8 @@
   width: 38vw;
   height: 380px;
   border-radius: 0 0 50% 50% / 0 0 100% 100%;
-  background-color: #0d0f1a;
-  border-bottom: 2px solid rgba(100, 160, 255, 0.2);
+  background-color: #f3e8ff;
+  border-bottom: 2px solid rgba(168, 85, 247, 0.1);
   z-index: 0;
   pointer-events: none;
 }
@@ -107,11 +107,11 @@
   border-radius: 14px;
   overflow: hidden;
   transition: border-color 0.3s ease;
-  background-color: #0a0b10;
+  background-color: var(--surface-color);
 }
 
 .faq-item.active {
-  border-color: rgba(255,255,255,0.15);
+  border-color: rgba(168, 85, 247, 0.2);
 }
 
 .faq-question {
@@ -185,9 +185,9 @@
 }
 
 .badge-gray {
-  background-color: rgba(255,255,255,0.08);
-  color: var(--text-muted);
-  border: 1px solid rgba(255,255,255,0.12);
+  background-color: rgba(168, 85, 247, 0.08);
+  color: var(--primary);
+  border: 1px solid rgba(168, 85, 247, 0.15);
   padding: 6px 16px;
   border-radius: 100px;
   font-size: 13px;
@@ -223,21 +223,21 @@
   top: 25px;
   left: 145px;
 }
-.green-pill { background: #22c55e; color: #000; }
+.green-pill { background: var(--secondary); color: #fff; }
 
 .cursor-right {
   bottom: 25px;
   right: 25px;
 }
-.lime-pill { background: #d4f84b; color: #000; }
+.lime-pill { background: var(--primary); color: #fff; }
 
 /* Mockup frame */
 .mockup-frame {
-  background: #161720;
+  background: #ffffff;
   border-radius: 20px;
   overflow: hidden;
-  border: 1px solid rgba(255,255,255,0.1);
-  box-shadow: 0 30px 80px rgba(0,0,0,0.5);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 30px 80px rgba(168, 85, 247, 0.05);
   margin-top: 50px;
 }
 
@@ -246,8 +246,8 @@
   gap: 6px;
   align-items: center;
   padding: 12px 16px;
-  background: #11121a;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
+  background: #f9fafb;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .dot-r { display:inline-block; width:10px; height:10px; border-radius:50%; background:#ff5f57; }
@@ -262,7 +262,7 @@
 
 .mockup-sidebar {
   width: 130px;
-  border-right: 1px solid rgba(255,255,255,0.06);
+  border-right: 1px solid var(--border-color);
   padding: 14px 10px;
   display: flex;
   flex-direction: column;
@@ -278,19 +278,19 @@
   transition: all 0.2s;
 }
 .s-item.active, .s-item:hover {
-  background: rgba(0,122,255,0.15);
+  background: rgba(168, 85, 247, 0.1);
   color: var(--primary);
 }
 
 .mockup-main {
   flex: 1;
   padding: 18px;
-  background: #0e0f18;
+  background: #ffffff;
   display: flex;
   flex-direction: column;
 }
 
-.mockup-main h5 { font-size: 15px; font-weight: 700; margin-bottom: 4px; }
+.mockup-main h5 { font-size: 15px; font-weight: 700; margin-bottom: 4px; color: var(--text-main); }
 .mockup-sub { font-size: 11px; color: var(--text-muted); margin-bottom: 14px; }
 
 .create-btn {
@@ -304,16 +304,17 @@
   border-radius: 8px;
   width: fit-content;
   margin-bottom: 14px;
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.2);
 }
 
 .inner-dark-card {
-  background: linear-gradient(135deg, rgba(10,60,20,0.85) 0%, rgba(5,20,50,0.85) 100%);
+  background: linear-gradient(135deg, rgba(168, 85, 247, 0.1) 0%, rgba(126, 34, 206, 0.05) 100%);
   border-radius: 12px;
   flex: 1;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255,255,255,0.06);
+  border: 1px solid rgba(168, 85, 247, 0.1);
   padding: 20px;
 }
 
@@ -322,5 +323,52 @@
   font-weight: 700;
   text-align: center;
   line-height: 1.4;
-  color: #fff;
+  color: var(--text-main);
+}
+
+@media (max-width: 768px) {
+  .faq-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding-bottom: 60px;
+  }
+  .faq-left {
+    text-align: center;
+  }
+  .faq-left .title {
+    font-size: 32px;
+  }
+  .faq-btn {
+    margin-top: 16px;
+    width: 100%;
+    justify-content: center;
+  }
+  .faq-half-circle-top {
+    display: none;
+  }
+  .faq-half-circle-bottom {
+    display: none;
+  }
+  .cta-inner {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .cta-content {
+    text-align: center;
+  }
+  .cta-content .title {
+    font-size: 32px;
+  }
+  .cta-btns {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 12px;
+  }
+  .cta-btns .btn {
+    width: 100%;
+  }
+  .cta-mockup-wrap {
+    display: none; /* Hide mockup on mobile for clean CTA look */
+  }
 }

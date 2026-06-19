@@ -10,7 +10,7 @@
 }
 
 .testi-card {
-  background-color: var(--surface-color);
+  background-color: #f9fafb;
   border: 1px solid var(--border-color);
   border-radius: 16px;
   padding: 28px;
@@ -19,7 +19,8 @@
 
 .testi-card:hover {
   transform: translateY(-4px);
-  border-color: rgba(255,255,255,0.1);
+  border-color: rgba(168, 85, 247, 0.2);
+  box-shadow: var(--shadow-lg);
 }
 
 .testi-author {
@@ -60,4 +61,11 @@
   font-size: 14px;
   color: var(--text-muted);
   line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .testi-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 }
