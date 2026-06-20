@@ -18,7 +18,7 @@
   bottom: 20px; /* expanded/bigger container card */
   left: 0;
   width: 100%;
-  background-color: var(--bg-dark-violet) !important; /* standard black-purple background */
+  background: linear-gradient(135deg, #250d4f 0%, #0c031c 100%) !important; /* rich purple gradient */
   border-radius: 24px;
   z-index: 1;
 }
