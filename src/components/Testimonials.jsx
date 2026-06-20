@@ -98,18 +98,12 @@ const Testimonials = () => {
               {/* Left text column */}
               <div className="testi-left-content">
                 <div className="testi-left-content-inner">
-                  <div className="testi-badge">
-                    <span className="badge-bold">Reputação</span>
-                    <span className="badge-divider">—</span>
-                    <span className="badge-normal">Testado e aprovado</span>
-                  </div>
-                  
                   <h2 className="testi-main-title">
-                    O que dizem os maiores nomes do mercado:
+                    Vejam o que estão dizendo sobre nós:
                   </h2>
                   
                   <div className="testi-subtitle">
-                    A inlead atua em diversos segmentos, sendo utilizada e recomendada por quem mais entende.
+                    A MassFlow está presente nos mais diversos segmentos de mercado, consolidando-se como a escolha preferida e recomendada por quem mais entende do assunto.
                   </div>
 
                   {/* Simple Carousel Navigation Arrows */}
