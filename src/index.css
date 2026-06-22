@@ -14,10 +14,10 @@
   --text-main: #111827;
   --text-muted: #4b5563;
   
-  --primary: #a855f7;
-  --primary-hover: #9333ea;
-  --secondary: #7e22ce;
-  --secondary-hover: #6b21a8;
+  --primary: #b366ff;
+  --primary-hover: #9d4ced;
+  --secondary: #b366ff;
+  --secondary-hover: #9d4ced;
   
   --shadow-sm: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08);
@@ -128,7 +128,7 @@ img {
 
 /* Typography Utilities */
 .text-gradient {
-  background: linear-gradient(90deg, #111827, #7e22ce);
+  background: linear-gradient(90deg, #111827, #b366ff);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }

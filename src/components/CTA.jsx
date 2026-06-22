@@ -23,15 +23,15 @@ const CTA = () => {
             {/* Floating cursors near the card */}
             <div className="floating-cursor cta-cursor-saas">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M5 3L19 12L5 21V3Z" fill="#7e22ce"/>
+                <path d="M5 3L19 12L5 21V3Z" fill="#b366ff"/>
               </svg>
-              <div className="cursor-label" style={{ background: '#7e22ce', color: '#fff', padding: '8px 16px', borderRadius: '100px', fontSize: '15px', fontWeight: '700' }}>SaaS</div>
+              <div className="cursor-label" style={{ background: '#b366ff', color: '#fff', padding: '8px 16px', borderRadius: '100px', fontSize: '15px', fontWeight: '700' }}>SaaS</div>
             </div>
             <div className="floating-cursor cta-cursor-website">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-                <path d="M5 3L19 12L5 21V3Z" fill="#a855f7"/>
+                <path d="M5 3L19 12L5 21V3Z" fill="#b366ff"/>
               </svg>
-              <div className="cursor-label" style={{ background: '#a855f7', color: '#fff', padding: '8px 16px', borderRadius: '100px', fontSize: '15px', fontWeight: '700' }}>Website</div>
+              <div className="cursor-label" style={{ background: '#b366ff', color: '#fff', padding: '8px 16px', borderRadius: '100px', fontSize: '15px', fontWeight: '700' }}>Website</div>
             </div>
 
             {/* App mockup card */}
