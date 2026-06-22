@@ -37,7 +37,7 @@ const Templates = () => {
         </div>
       </div>
 
-      <div className="carousel-wrapper reveal reveal-delay-2">
+      <div className="carousel-wrapper reveal-carousel">
         <div className="carousel-track">
           {templates.map((tpl, index) => (
             <div className="carousel-slide" key={`a-${index}`}>

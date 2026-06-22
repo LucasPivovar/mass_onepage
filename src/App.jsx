@@ -53,6 +53,11 @@ function App() {
         {renderContent()}
       </main>
       <Footer />
+      <div className="custom-cursor">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4.5 3v13.6a1 1 0 0 0 1.62.78l3.85-3.12a1 1 0 0 1 .63-.22h6.1a1 1 0 0 0 .78-1.62L6.12 3.22A1 1 0 0 0 4.5 3Z" fill="#000000" stroke="#ffffff" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round"/>
+        </svg>
+      </div>
     </>
   )
 }
