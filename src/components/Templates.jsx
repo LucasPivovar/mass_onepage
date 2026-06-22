@@ -29,8 +29,6 @@ const Templates = () => {
 
   return (
     <section id="templates" ref={sectionRef} className="templates-sec section-padding">
-      {/* Inverted U dome shape behind the text */}
-      <div className="dome-shape"></div>
 
       <div className="container">
         <div className="sec-title text-center sec-title-light reveal">

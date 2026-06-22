@@ -53,7 +53,7 @@ const Hero = () => {
           </div>
           
           {/* Laptop Mockup Wrapper with Negative Margin-Bottom to Overlap the Next Section */}
-          <div id="como-funciona" className="hero-image-wrapper">
+          <div id="quem-somos" className="hero-image-wrapper">
             <div className="placeholder-laptop">
                <div className="placeholder-screen">
                   {/* Detailed screen preview displaying a live demo loop video */}

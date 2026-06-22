@@ -23,22 +23,22 @@ const Footer = () => {
             <div className="footer-col">
               <h5>Empresa</h5>
               <ul>
-                <li><a href="/quem-somos">Quem Somos</a></li>
+                <li><a href="/#quem-somos">Quem Somos</a></li>
                 <li><a href="/#features">Nossa Solução</a></li>
               </ul>
             </div>
             <div className="footer-col">
               <h5>Institucional</h5>
               <ul>
-                <li><a href="#">Termos de Uso</a></li>
-                <li><a href="#">Politica de Privacidade</a></li>
+                <li><a href="/termos-de-uso">Termos de Uso</a></li>
+                <li><a href="/politica-de-privacidade">Politica de Privacidade</a></li>
               </ul>
             </div>
             <div className="footer-col">
               <h5>Suporte</h5>
               <ul>
                 <li><a href="#">Status de Rede</a></li>
-                <li><a href="/#footer">Contato</a></li>
+                <li><a href="/#contato">Contato</a></li>
               </ul>
             </div>
           </div>

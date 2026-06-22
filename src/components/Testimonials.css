@@ -18,7 +18,7 @@
   bottom: 20px; /* expanded/bigger container card */
   left: 0;
   width: 100%;
-  background: linear-gradient(135deg, #4c1d95 0%, #1a083a 100%) !important; /* lighter purple gradient */
+  background: linear-gradient(135deg, var(--secondary) 0%, #4c1d95 100%) !important; /* lighter purple gradient */
   border-radius: 24px;
   z-index: 1;
 }
@@ -105,7 +105,7 @@
 }
 
 .testi-subtitle {
-  color: #9ca3af;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 16px;
   line-height: 1.6;
 }

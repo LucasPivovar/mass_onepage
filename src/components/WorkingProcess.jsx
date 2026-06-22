@@ -3,7 +3,7 @@ import './WorkingProcess.css';
 
 const WorkingProcess = () => {
   return (
-    <section id="working-process" className="process-sec section-padding">
+    <section id="como-funciona" className="process-sec section-padding">
       <div className="container">
         {/* Title */}
         <div className="sec-title text-center reveal reveal-up">

@@ -10,31 +10,47 @@ import Testimonials from './components/Testimonials'
 import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import QuemSomos from './components/QuemSomos'
+import PoliticaPrivacidade from './components/PoliticaPrivacidade'
+import TermosUso from './components/TermosUso'
 import useScrollReveal from './hooks/useScrollReveal'
 
 function App() {
   useScrollReveal();
 
-  const isQuemSomos = window.location.pathname === '/quem-somos';
+  const path = window.location.pathname;
+  const isQuemSomos = path === '/quem-somos';
+  const isPolitica = path === '/politica-de-privacidade';
+  const isTermos = path === '/termos-de-uso';
+
+  const renderContent = () => {
+    if (isQuemSomos) {
+      return <QuemSomos />;
+    }
+    if (isPolitica) {
+      return <PoliticaPrivacidade />;
+    }
+    if (isTermos) {
+      return <TermosUso />;
+    }
+    return (
+      <>
+        <Hero />
+        <WorkingProcess />
+        <Features />
+        <Templates />
+        <WhyChooseUs />
+        <Pricing />
+        <Testimonials />
+        <FAQ />
+      </>
+    );
+  };
 
   return (
     <>
       <Header />
       <main>
-        {isQuemSomos ? (
-          <QuemSomos />
-        ) : (
-          <>
-            <Hero />
-            <WorkingProcess />
-            <Features />
-            <Templates />
-            <WhyChooseUs />
-            <Pricing />
-            <Testimonials />
-            <FAQ />
-          </>
-        )}
+        {renderContent()}
       </main>
       <Footer />
     </>

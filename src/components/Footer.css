@@ -1,5 +1,5 @@
 .footer-sec {
-  background-color: var(--bg-dark-violet);
+  background: linear-gradient(135deg, var(--secondary) 0%, #4c1d95 100%);
   color: #e5e7eb;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   padding: 80px 0 0;
@@ -24,7 +24,7 @@
 }
 
 .footer-brand p {
-  color: #9ca3af;
+  color: rgba(255, 255, 255, 0.9);
   font-size: 14px;
   line-height: 1.8;
   max-width: 300px;
@@ -41,7 +41,7 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #9ca3af;
+  color: #ffffff;
   margin-bottom: 20px;
 }
 
@@ -53,7 +53,7 @@
 
 .footer-col a {
   font-size: 14px;
-  color: #9ca3af;
+  color: rgba(255, 255, 255, 0.85);
 }
 
 .footer-col a:hover {
@@ -67,7 +67,7 @@
 }
 
 .footer-bottom p {
-  color: #9ca3af;
+  color: rgba(255, 255, 255, 0.7);
   font-size: 13px;
 }
 

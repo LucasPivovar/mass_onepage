@@ -28,9 +28,6 @@ const WhyChooseUs = () => {
             <h3 className="why-card-title">Fale com mais clientes sem aumentar sua equipe</h3>
             <p className="why-card-desc">Automatize processos de discagem, reduza tempo entre chamadas e maximize a utilização dos operadores.</p>
             
-            {/* The beautiful blue arc in the background */}
-            <div className="card-blue-arc"></div>
-
             <a href="#" className="why-btn-premium">
               <span>Read More</span>
               <span className="btn-arrow-circle">

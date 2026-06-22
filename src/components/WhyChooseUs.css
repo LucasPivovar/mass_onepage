@@ -52,7 +52,7 @@
 }
 
 .why-card.card-colored-effect:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px) scale(1.04) !important;
   border-color: rgba(255, 255, 255, 0.4);
   box-shadow: 0 20px 45px rgba(168, 85, 247, 0.4);
 }
@@ -118,7 +118,7 @@
 }
 
 .why-card.card-blue:hover {
-  transform: translateY(-6px);
+  transform: translateY(-6px) scale(1.04) !important;
   box-shadow: 0 15px 35px rgba(168, 85, 247, 0.25);
 }
 
