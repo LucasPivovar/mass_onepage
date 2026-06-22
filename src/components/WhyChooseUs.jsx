@@ -27,13 +27,6 @@ const WhyChooseUs = () => {
             </div>
             <h3 className="why-card-title">Fale com mais clientes sem aumentar sua equipe</h3>
             <p className="why-card-desc">Automatize processos de discagem, reduza tempo entre chamadas e maximize a utilização dos operadores.</p>
-            
-            <a href="#" className="why-btn-premium">
-              <span>Read More</span>
-              <span className="btn-arrow-circle">
-                <i className="fa-solid fa-arrow-right"></i>
-              </span>
-            </a>
           </div>
 
           {/* Card 3: Dark Background (Top Right) */}
@@ -52,9 +45,6 @@ const WhyChooseUs = () => {
             </div>
             <h3 className="why-card-title">Monitoramento Operacional</h3>
             <p className="why-card-desc">Acompanhe chamadas, resultados e desempenho dos operadores. Tome decisões baseadas em dados e identifique oportunidades de melhoria rapidamente.</p>
-            {/* Ambient neon decorative background spheres for visual effects */}
-            <div className="card-effect-sphere sphere-1"></div>
-            <div className="card-effect-sphere sphere-2"></div>
           </div>
 
           {/* Card 5: Lime Background */}

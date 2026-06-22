@@ -15,21 +15,26 @@
   border: 1px solid var(--border-color);
   border-radius: 20px;
   overflow: hidden;
-  transition: transform 0.3s ease, border-color 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .price-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  background-color: var(--primary);
+  border-color: var(--primary);
+  color: #ffffff;
+  box-shadow: var(--shadow-lg);
 }
 
 .price-card.popular {
-  border: 2px solid var(--primary);
+  border: 1px solid var(--border-color);
   position: relative;
-  transform: scale(1.04);
 }
 
 .price-card.popular:hover {
-  transform: scale(1.04) translateY(-5px);
+  transform: translateY(-8px);
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
 
 .popular-badge {
@@ -41,6 +46,7 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   padding: 10px;
+  transition: background-color 0.3s ease;
 }
 
 .price-header {
@@ -163,4 +169,71 @@
   .price-card.popular:hover {
     transform: translateY(-5px);
   }
+}
+
+/* Transições para transição suave de hover nos elementos internos */
+.plan-desc,
+.price .period,
+.price-features,
+.price-features li,
+.discount-badge,
+.price-features li svg circle,
+.price-features li svg path {
+  transition: all 0.3s ease;
+}
+
+/* Hover sub-elements styling for pricing cards */
+.price-card:hover .plan-desc,
+.price-card:hover .price .period,
+.price-card:hover .price-features li {
+  color: rgba(255, 255, 255, 0.8) !important;
+}
+
+.price-card:hover .price-features h4 {
+  color: #ffffff;
+}
+
+.price-card:hover .price-features {
+  border-top-color: rgba(255, 255, 255, 0.2);
+}
+
+.price-card:hover .price-features li svg circle {
+  stroke: rgba(255, 255, 255, 0.4);
+}
+
+.price-card:hover .price-features li svg path {
+  stroke: #ffffff;
+}
+
+.price-card:hover .btn-outline-white {
+  background-color: #ffffff;
+  color: var(--primary);
+  border-color: #ffffff;
+}
+
+.price-card:hover .btn-outline-white:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--primary-hover);
+  border-color: rgba(255, 255, 255, 0.9);
+}
+
+.price-card:hover .btn-primary {
+  background-color: #ffffff;
+  color: var(--primary);
+}
+
+.price-card:hover .btn-primary:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  color: var(--primary-hover);
+}
+
+.price-card:hover .discount-badge {
+  background-color: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  color: #ffffff;
+}
+
+.price-card:hover .popular-badge {
+  background-color: var(--primary-hover);
+  color: #ffffff;
 }

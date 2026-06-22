@@ -5,13 +5,13 @@ import WorkingProcess from './components/WorkingProcess'
 import Features from './components/Features'
 import Templates from './components/Templates'
 import WhyChooseUs from './components/WhyChooseUs'
-import Pricing from './components/Pricing'
 import Testimonials from './components/Testimonials'
 import FAQ from './components/FAQ'
 import Footer from './components/Footer'
 import QuemSomos from './components/QuemSomos'
 import PoliticaPrivacidade from './components/PoliticaPrivacidade'
 import TermosUso from './components/TermosUso'
+import Status from './components/Status'
 import useScrollReveal from './hooks/useScrollReveal'
 
 function App() {
@@ -21,6 +21,7 @@ function App() {
   const isQuemSomos = path === '/quem-somos';
   const isPolitica = path === '/politica-de-privacidade';
   const isTermos = path === '/termos-de-uso';
+  const isStatus = path === '/status';
 
   const renderContent = () => {
     if (isQuemSomos) {
@@ -32,6 +33,9 @@ function App() {
     if (isTermos) {
       return <TermosUso />;
     }
+    if (isStatus) {
+      return <Status />;
+    }
     return (
       <>
         <Hero />
@@ -39,7 +43,6 @@ function App() {
         <Features />
         <Templates />
         <WhyChooseUs />
-        <Pricing />
         <Testimonials />
         <FAQ />
       </>

@@ -54,9 +54,11 @@ const Pricing = () => {
                 </div>
                 <h3 className="plan-name">{plan.name}</h3>
                 <p className="plan-desc">{plan.description}</p>
-                <a href="#" className={`btn ${plan.popular ? 'btn-primary' : 'btn-outline-white'} btn-full`}>
-                  Choose Package &rarr;
-                </a>
+                {i !== 1 && (
+                  <a href="#" className={`btn ${plan.popular ? 'btn-primary' : 'btn-outline-white'} btn-full`}>
+                    Choose Package &rarr;
+                  </a>
+                )}
               </div>
               <div className="price-features">
                 <h4>Features:</h4>

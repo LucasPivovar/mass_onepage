@@ -15,58 +15,48 @@
 }
 
 .why-card {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
   border-radius: 24px;
   padding: 40px;
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
   position: relative;
   overflow: hidden;
   min-height: 250px;
-}
-
-.why-card.card-dark,
-.why-card.card-dark-light,
-.why-card.card-dark-deep {
-  border: 1px solid var(--border-color);
   color: var(--text-main);
-  transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.why-card.card-dark {
-  background-color: #f9fafb;
-}
-
-.why-card.card-dark-light {
-  background-color: #fcfbfe;
-  border-color: var(--border-color);
-}
-
-.why-card.card-colored-effect {
-  background: linear-gradient(135deg, #7e22ce 0%, #a855f7 50%, #4f46e5 100%);
-  border: 1px solid rgba(168, 85, 247, 0.3);
+.why-card:hover {
+  transform: translateY(-8px);
+  background-color: var(--primary);
+  border-color: var(--primary);
   color: #ffffff;
   box-shadow: 0 15px 35px rgba(168, 85, 247, 0.2);
-  position: relative;
-  overflow: hidden;
 }
 
-.why-card.card-colored-effect:hover {
-  transform: translateY(-6px) scale(1.04) !important;
-  border-color: rgba(255, 255, 255, 0.4);
-  box-shadow: 0 20px 45px rgba(168, 85, 247, 0.4);
+.why-card.card-blue,
+.why-card.card-dark,
+.why-card.card-dark-light,
+.why-card.card-colored-effect,
+.why-card.card-lime {
+  background-color: #ffffff;
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  box-shadow: none;
 }
 
-.why-card.card-colored-effect .why-icon {
-  color: #ffffff !important;
-}
-
-.why-card.card-colored-effect .why-card-title {
+.why-card.card-blue:hover,
+.why-card.card-dark:hover,
+.why-card.card-dark-light:hover,
+.why-card.card-colored-effect:hover,
+.why-card.card-lime:hover {
+  transform: translateY(-8px);
+  background-color: var(--primary);
+  border-color: var(--primary);
   color: #ffffff;
-}
-
-.why-card.card-colored-effect .why-card-desc {
-  color: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 15px 35px rgba(168, 85, 247, 0.2);
 }
 
 /* Ambient glow spheres for interactive effect */
@@ -104,39 +94,6 @@
   transform: scale(1.15) translate(10px, -10px);
 }
 
-.why-card.card-dark:hover,
-.why-card.card-dark-light:hover {
-  transform: translateY(-6px);
-  border-color: rgba(168, 85, 247, 0.2);
-  box-shadow: 0 15px 35px rgba(168, 85, 247, 0.05);
-}
-
-.why-card.card-blue {
-  background-color: var(--primary);
-  color: #fff;
-  border: 1px solid transparent;
-}
-
-.why-card.card-blue:hover {
-  transform: translateY(-6px) scale(1.04) !important;
-  box-shadow: 0 15px 35px rgba(168, 85, 247, 0.25);
-}
-
-.why-card.card-lime {
-  background-color: #faf5ff;
-  color: #7e22ce;
-  border: 1px solid rgba(168, 85, 247, 0.15);
-}
-
-.why-card.card-lime .why-card-desc {
-  color: rgba(126, 34, 206, 0.85);
-}
-
-.why-card.card-lime:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 15px 35px rgba(168, 85, 247, 0.15);
-}
-
 /* Tall Card Specifics */
 .why-card.card-tall {
   grid-column: 2;
@@ -155,15 +112,22 @@
   height: 48px;
   position: relative;
   z-index: 2;
+  color: var(--primary);
+  transition: color 0.3s ease;
 }
 
 .why-icon i {
   font-size: 32px;
 }
 
-.card-blue .why-icon { color: #fff; }
-.card-lime .why-icon { color: #7e22ce; }
-.card-dark .why-icon { color: var(--primary); }
+.why-card:hover .why-icon,
+.why-card.card-blue:hover .why-icon,
+.why-card.card-lime:hover .why-icon,
+.why-card.card-dark:hover .why-icon,
+.why-card.card-dark-light:hover .why-icon,
+.why-card.card-colored-effect:hover .why-icon {
+  color: #ffffff !important;
+}
 
 .why-card-title {
   font-size: 22px;
@@ -172,6 +136,11 @@
   line-height: 1.3;
   position: relative;
   z-index: 2;
+  transition: color 0.3s ease;
+}
+
+.why-card:hover .why-card-title {
+  color: #ffffff;
 }
 
 .why-card-desc {
@@ -181,10 +150,16 @@
   margin-bottom: 24px;
   position: relative;
   z-index: 2;
+  transition: color 0.3s ease;
 }
 
-.card-blue .why-card-desc {
-  color: rgba(255, 255, 255, 0.85);
+.why-card:hover .why-card-desc,
+.why-card.card-blue:hover .why-card-desc,
+.why-card.card-lime:hover .why-card-desc,
+.why-card.card-dark:hover .why-card-desc,
+.why-card.card-dark-light:hover .why-card-desc,
+.why-card.card-colored-effect:hover .why-card-desc {
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .card-tall .why-card-desc {
