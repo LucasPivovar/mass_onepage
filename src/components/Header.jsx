@@ -9,8 +9,7 @@ const Header = () => {
           
           <div className="header-logo">
             <a href="/" className="logo-text">
-              <span className="logo-icon"></span>
-              MassFlow
+              <img src="/logo-.webp" alt="MassFlow" className="logo-img" />
             </a>
           </div>
 

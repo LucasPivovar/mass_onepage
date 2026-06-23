@@ -8,8 +8,7 @@ const Footer = () => {
         <div className="footer-inner">
           <div className="footer-brand">
             <a href="/" className="logo-text">
-              <span className="logo-icon"></span>
-              MassFlow
+              <img src="/logo-.webp" alt="MassFlow" className="logo-img" />
             </a>
             <p>MassFlow transforma a forma como você se comunica. Crie fluxos, automatize atendimentos e escale sua operação de vendas de forma simples e inteligente.</p>
             <div className="footer-socials">

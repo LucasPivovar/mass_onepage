@@ -230,3 +230,10 @@ img {
   }
 }
 
+.logo-img {
+  height: 32px;
+  width: auto;
+  display: block;
+}
+
+

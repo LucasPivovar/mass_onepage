@@ -25,6 +25,12 @@
   gap: 8px;
 }
 
+.header-logo .logo-img {
+  height: 18px !important;
+  width: auto !important;
+  display: block;
+}
+
 .logo-icon {
   width: 24px;
   height: 24px;
