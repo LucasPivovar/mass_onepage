@@ -153,18 +153,18 @@
   animation-delay: 0.5s;
 }
 
-/* TikTok: Esquerda meio - colado na borda do laptop */
+/* TikTok: Esquerda meio */
 .badge-tiktok-pos {
   top: 62%;
-  left: 13%;
+  left: 8%;
   animation: floatAnim2 6.5s ease-in-out infinite;
   animation-delay: 1.5s;
 }
 
-/* Messenger: Direita meio - colado na borda do laptop */
+/* Messenger: Direita meio */
 .badge-messenger-pos {
   top: 62%;
-  right: 13%;
+  right: 8%;
   animation: floatAnim1 7.5s ease-in-out infinite;
   animation-delay: 2s;
 }
