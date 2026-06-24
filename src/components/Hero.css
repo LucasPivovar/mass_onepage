@@ -138,49 +138,49 @@
   z-index: 20;
 }
 
-/* WhatsApp: Top Left - próximo ao laptop */
+/* WhatsApp: Esquerda superior - colado na borda do laptop */
 .badge-whatsapp-pos {
   top: 52%;
-  left: 5%;
+  left: 13%;
   animation: floatAnim1 6s ease-in-out infinite;
 }
 
-/* Instagram: Top Right - próximo ao laptop */
+/* Instagram: Direita superior - colado na borda do laptop */
 .badge-instagram-pos {
   top: 50%;
-  right: 5%;
+  right: 13%;
   animation: floatAnim2 7s ease-in-out infinite;
   animation-delay: 0.5s;
 }
 
-/* TikTok: Mid Left - próximo ao laptop */
+/* TikTok: Esquerda meio - colado na borda do laptop */
 .badge-tiktok-pos {
   top: 62%;
-  left: 6%;
+  left: 13%;
   animation: floatAnim2 6.5s ease-in-out infinite;
   animation-delay: 1.5s;
 }
 
-/* Messenger: Mid Right - próximo ao laptop */
+/* Messenger: Direita meio - colado na borda do laptop */
 .badge-messenger-pos {
   top: 62%;
-  right: 6%;
+  right: 13%;
   animation: floatAnim1 7.5s ease-in-out infinite;
   animation-delay: 2s;
 }
 
-/* Phone: Bottom Left - próximo ao laptop */
+/* Phone: Esquerda inferior - colado na borda do laptop */
 .badge-phone-pos {
   top: 73%;
-  left: 4%;
+  left: 13%;
   animation: floatAnim1 8s ease-in-out infinite;
   animation-delay: 1s;
 }
 
-/* Bot: Bottom Right - próximo ao laptop */
+/* Bot: Direita inferior - colado na borda do laptop */
 .badge-bot-pos {
   top: 73%;
-  right: 4%;
+  right: 13%;
   animation: floatAnim2 6.8s ease-in-out infinite;
   animation-delay: 2.5s;
 }
