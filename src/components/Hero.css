@@ -138,49 +138,49 @@
   z-index: 20;
 }
 
-/* WhatsApp: Top Left */
+/* WhatsApp: Top Left - próximo ao laptop */
 .badge-whatsapp-pos {
-  top: 36%;
-  left: 6%;
+  top: 52%;
+  left: 5%;
   animation: floatAnim1 6s ease-in-out infinite;
 }
 
-/* Instagram: Top Right */
+/* Instagram: Top Right - próximo ao laptop */
 .badge-instagram-pos {
-  top: 34%;
-  right: 6%;
+  top: 50%;
+  right: 5%;
   animation: floatAnim2 7s ease-in-out infinite;
   animation-delay: 0.5s;
 }
 
-/* TikTok: Mid Left */
+/* TikTok: Mid Left - próximo ao laptop */
 .badge-tiktok-pos {
-  top: 50%;
-  left: 8%;
+  top: 62%;
+  left: 6%;
   animation: floatAnim2 6.5s ease-in-out infinite;
   animation-delay: 1.5s;
 }
 
-/* Messenger: Mid Right */
+/* Messenger: Mid Right - próximo ao laptop */
 .badge-messenger-pos {
-  top: 48%;
-  right: 8%;
+  top: 62%;
+  right: 6%;
   animation: floatAnim1 7.5s ease-in-out infinite;
   animation-delay: 2s;
 }
 
-/* Phone: Bottom Left */
+/* Phone: Bottom Left - próximo ao laptop */
 .badge-phone-pos {
-  top: 64%;
-  left: 5%;
+  top: 73%;
+  left: 4%;
   animation: floatAnim1 8s ease-in-out infinite;
   animation-delay: 1s;
 }
 
-/* Bot: Bottom Right */
+/* Bot: Bottom Right - próximo ao laptop */
 .badge-bot-pos {
-  top: 62%;
-  right: 5%;
+  top: 73%;
+  right: 4%;
   animation: floatAnim2 6.8s ease-in-out infinite;
   animation-delay: 2.5s;
 }
