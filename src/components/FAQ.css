@@ -2,12 +2,21 @@
   background-color: var(--bg-lavender);
   position: relative;
   overflow: hidden;
-  padding: 100px 0 120px;
+  padding: 100px 0;
 }
 
-.faq-sec .container {
+.faq-sec .container,
+.contact-sec .container {
   position: relative;
   z-index: 2;
+}
+
+.contact-sec {
+  background-color: #ffffff;
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0;
+  border-top: 1px solid var(--border-color);
 }
 
 /* ── FAQ Part ── */

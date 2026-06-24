@@ -24,19 +24,47 @@ const Hero = () => {
         <div className="dot dot-16"></div>
       </div>
 
-      {/* Floating Cursors — positioned near the laptop card */}
-      <div className="floating-cursor cursor-saas">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0px 3px 5px rgba(0,0,0,0.35))' }}>
-          <path d="M4.5 3v13.6a1 1 0 0 0 1.62.78l3.85-3.12a1 1 0 0 1 .63-.22h6.1a1 1 0 0 0 .78-1.62L6.12 3.22A1 1 0 0 0 4.5 3Z" fill="#22c55e" stroke="#22c55e" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round"/>
-        </svg>
-        <div className="cursor-label label-green">SaaS</div>
+      {/* Floating Platform Badges */}
+      <div className="floating-badge-container badge-whatsapp-pos">
+        <div className="platform-badge badge-whatsapp">
+          <i className="fa-brands fa-whatsapp"></i>
+          <span>WhatsApp</span>
+        </div>
       </div>
 
-      <div className="floating-cursor cursor-website">
-        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ filter: 'drop-shadow(0px 3px 5px rgba(0,0,0,0.35))' }}>
-          <path d="M4.5 3v13.6a1 1 0 0 0 1.62.78l3.85-3.12a1 1 0 0 1 .63-.22h6.1a1 1 0 0 0 .78-1.62L6.12 3.22A1 1 0 0 0 4.5 3Z" fill="#d4f84b" stroke="#d4f84b" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round"/>
-        </svg>
-        <div className="cursor-label label-lime">Website</div>
+      <div className="floating-badge-container badge-instagram-pos">
+        <div className="platform-badge badge-instagram">
+          <i className="fa-brands fa-instagram"></i>
+          <span>Instagram</span>
+        </div>
+      </div>
+
+      <div className="floating-badge-container badge-tiktok-pos">
+        <div className="platform-badge badge-tiktok">
+          <i className="fa-brands fa-tiktok"></i>
+          <span>TikTok</span>
+        </div>
+      </div>
+
+      <div className="floating-badge-container badge-messenger-pos">
+        <div className="platform-badge badge-messenger">
+          <i className="fa-brands fa-facebook-messenger"></i>
+          <span>Messenger</span>
+        </div>
+      </div>
+
+      <div className="floating-badge-container badge-phone-pos">
+        <div className="platform-badge badge-phone">
+          <i className="fa-solid fa-phone"></i>
+          <span>Telefone</span>
+        </div>
+      </div>
+
+      <div className="floating-badge-container badge-bot-pos">
+        <div className="platform-badge badge-bot">
+          <i className="fa-solid fa-robot"></i>
+          <span>Bot / Robô</span>
+        </div>
       </div>
 
       <div className="container">
@@ -47,8 +75,8 @@ const Hero = () => {
               Automatize atendimentos, alcance milhares de contatos e gerencie múltiplos canais sem trocar de plataforma.
             </p>
             <div className="hero-btn">
-              <a href="#" className="btn btn-primary">Começar Grátis &rarr;</a>
-              <a href="#" className="btn btn-outline">Ver Recursos &rarr;</a>
+              <a href="/#contato" className="btn btn-primary">Falar Conosco &rarr;</a>
+              <a href="#templates" className="btn btn-outline">Ver Recursos &rarr;</a>
             </div>
           </div>
           
@@ -75,7 +103,7 @@ const Hero = () => {
 
       {/* Brand Logos Ticker - Overlapped by Laptop Mockup */}
       <div className="hero-logos-container reveal reveal-up">
-        <p className="logos-title">Confiado por mais de 1,7 milhão de empresas em todo o mundo</p>
+        <p className="logos-title">Confiado por mais de 10 mil empresas em todo o mundo</p>
         <div className="logos-slider">
           <div className="logos-track">
             <span><i className="fa-brands fa-dropbox"></i> Dropbox</span>
