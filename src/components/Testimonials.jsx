@@ -9,23 +9,27 @@ import video4 from '../assets/Depoimento/IMG_8253.MOV';
 const partnersData = [
   {
     id: 0,
-    name: 'Depoimento 1',
-    video: video1
+    name: 'Depoimento 4',
+    video: video4,
+    startTime: 0
   },
   {
     id: 1,
-    name: 'Depoimento 2',
-    video: video2
+    name: 'Depoimento 1',
+    video: video1,
+    startTime: 0
   },
   {
     id: 2,
-    name: 'Depoimento 3',
-    video: video3
+    name: 'Depoimento 2',
+    video: video2,
+    startTime: 0.6
   },
   {
     id: 3,
-    name: 'Depoimento 4',
-    video: video4
+    name: 'Depoimento 3',
+    video: video3,
+    startTime: 0
   }
 ];
 
@@ -58,12 +62,12 @@ const Testimonials = () => {
 
   // Sync active video playback
   useEffect(() => {
-    // Pause all other videos and reset
+    // Pause all other videos and reset to their start times
     partnersData.forEach((partner) => {
       const vid = videoRefs.current[partner.id];
       if (vid && partner.id !== activeIndex) {
         vid.pause();
-        vid.currentTime = 0;
+        vid.currentTime = partner.startTime || 0;
       }
     });
 
@@ -77,6 +81,7 @@ const Testimonials = () => {
         });
       } else {
         activeVid.pause();
+        activeVid.currentTime = partnersData[activeIndex].startTime || 0;
       }
     }
   }, [activeIndex, isPlaying, isMuted]);
@@ -183,9 +188,19 @@ const Testimonials = () => {
                                   />
                                 )}
 
-                                {/* Video Loop element */}
                                 <video 
-                                  ref={(el) => (videoRefs.current[partner.id] = el)}
+                                  key={partner.video}
+                                  ref={(el) => {
+                                    videoRefs.current[partner.id] = el;
+                                    if (el && el.currentTime === 0 && partner.startTime) {
+                                      el.currentTime = partner.startTime;
+                                    }
+                                  }}
+                                  onLoadedMetadata={(e) => {
+                                    if (partner.startTime) {
+                                      e.target.currentTime = partner.startTime;
+                                    }
+                                  }}
                                   src={partner.video}
                                   loop 
                                   playsInline 
