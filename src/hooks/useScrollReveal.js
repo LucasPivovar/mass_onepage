@@ -72,48 +72,49 @@ const useScrollReveal = () => {
       hero.addEventListener('mouseleave', onMouseLeave);
     }
 
-    // 5. Custom cursor mouse movement tracking (using left/top for robust translation)
-    const onMouseMoveCursor = (e) => {
-      const cursor = document.querySelector('.custom-cursor');
-      if (cursor) {
-        cursor.style.left = `${e.clientX}px`;
-        cursor.style.top = `${e.clientY}px`;
-        cursor.style.opacity = '1';
-      }
-    };
-    window.addEventListener('mousemove', onMouseMoveCursor);
+    // 5. Custom cursor mouse movement tracking (optimized with rAF & translate3d, desktop-only)
+    const isTouchDevice = !window.matchMedia('(pointer: fine)').matches || ('ontouchstart' in window) || (navigator.maxTouchPoints > 0);
+    const cursor = isTouchDevice ? null : document.querySelector('.custom-cursor');
+    let rafId = null;
 
-    // Event delegation for custom cursor hover states (links, buttons, interactive elements)
+    const onMouseMoveCursor = (e) => {
+      if (!cursor) return;
+      if (rafId) cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        cursor.style.transform = `translate3d(${e.clientX}px, ${e.clientY}px, 0)`;
+        cursor.style.opacity = '1';
+      });
+    };
+
     const onMouseOverCursor = (e) => {
-      const cursor = document.querySelector('.custom-cursor');
-      if (cursor && e.target && typeof e.target.closest === 'function' && e.target.closest('a, button, .faq-question, .why-btn-premium, .why-card, input, textarea, select')) {
+      if (cursor && e.target && typeof e.target.closest === 'function' && e.target.closest('a, button, .faq-question, .why-btn-premium, .why-card, input, textarea, select, .swiper-slide')) {
         cursor.classList.add('custom-cursor-hover');
       }
     };
     const onMouseOutCursor = (e) => {
-      const cursor = document.querySelector('.custom-cursor');
-      if (cursor && e.target && typeof e.target.closest === 'function' && e.target.closest('a, button, .faq-question, .why-btn-premium, .why-card, input, textarea, select')) {
+      if (cursor && e.target && typeof e.target.closest === 'function' && e.target.closest('a, button, .faq-question, .why-btn-premium, .why-card, input, textarea, select, .swiper-slide')) {
         cursor.classList.remove('custom-cursor-hover');
       }
     };
-    document.addEventListener('mouseover', onMouseOverCursor);
-    document.addEventListener('mouseout', onMouseOutCursor);
 
-    // Custom active/clicking states (mousedown and mouseup)
     const onMouseDownCursor = () => {
-      const cursor = document.querySelector('.custom-cursor');
       if (cursor) {
         cursor.classList.add('custom-cursor-active');
       }
     };
     const onMouseUpCursor = () => {
-      const cursor = document.querySelector('.custom-cursor');
       if (cursor) {
         cursor.classList.remove('custom-cursor-active');
       }
     };
-    window.addEventListener('mousedown', onMouseDownCursor);
-    window.addEventListener('mouseup', onMouseUpCursor);
+
+    if (!isTouchDevice && cursor) {
+      window.addEventListener('mousemove', onMouseMoveCursor, { passive: true });
+      document.addEventListener('mouseover', onMouseOverCursor, { passive: true });
+      document.addEventListener('mouseout', onMouseOutCursor, { passive: true });
+      window.addEventListener('mousedown', onMouseDownCursor, { passive: true });
+      window.addEventListener('mouseup', onMouseUpCursor, { passive: true });
+    }
 
     // 6. Fast reveal templates carousel wrapper
     const carouselEl = document.querySelector('.reveal-carousel');

@@ -1,34 +1,43 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './Testimonials.css';
 
-import video1 from '../assets/Depoimento/IMG_8228.MOV';
-import video2 from '../assets/Depoimento/IMG_8243.MOV';
-import video3 from '../assets/Depoimento/IMG_8246.MOV';
-import video4 from '../assets/Depoimento/IMG_8253.MOV';
+import poster1 from '../assets/Depoimento/IMG_8228.jpg';
+import poster2 from '../assets/Depoimento/IMG_8243.jpg';
+import poster3 from '../assets/Depoimento/IMG_8246.jpg';
+import poster4 from '../assets/Depoimento/IMG_8253.jpg';
+
+import video1 from '../assets/Depoimento/IMG_8228.mp4';
+import video2 from '../assets/Depoimento/IMG_8243.mp4';
+import video3 from '../assets/Depoimento/IMG_8246.mp4';
+import video4 from '../assets/Depoimento/IMG_8253.mp4';
 
 const partnersData = [
   {
     id: 0,
     name: 'Depoimento 4',
     video: video4,
+    poster: poster4,
     startTime: 0
   },
   {
     id: 1,
     name: 'Depoimento 1',
     video: video1,
+    poster: poster1,
     startTime: 0
   },
   {
     id: 2,
     name: 'Depoimento 2',
     video: video2,
+    poster: poster2,
     startTime: 0.6
   },
   {
     id: 3,
     name: 'Depoimento 3',
     video: video3,
+    poster: poster3,
     startTime: 0
   }
 ];
@@ -36,17 +45,38 @@ const partnersData = [
 const Testimonials = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isMuted, setIsMuted] = useState(true);
+  const [isMuted, setIsMuted] = useState(false);
+  const [loadedVideos, setLoadedVideos] = useState({});
   const videoRefs = useRef({});
 
-  // Cycle to next video
+  // Cycle to next slide
   const handleNext = () => {
+    setIsPlaying(false);
     setActiveIndex((prev) => (prev + 1) % partnersData.length);
   };
 
-  // Cycle to previous video
+  // Cycle to previous slide
   const handlePrev = () => {
+    setIsPlaying(false);
     setActiveIndex((prev) => (prev - 1 + partnersData.length) % partnersData.length);
+  };
+
+  // Play/pause handler on card click or button click
+  const handleCardClick = (partnerId) => {
+    if (partnerId !== activeIndex) {
+      setIsPlaying(false);
+      setActiveIndex(partnerId);
+      return;
+    }
+
+    if (!loadedVideos[partnerId]) {
+      // Lazy load video only upon explicit click
+      setLoadedVideos((prev) => ({ ...prev, [partnerId]: true }));
+      setIsPlaying(true);
+      setIsMuted(false);
+    } else {
+      setIsPlaying((prev) => !prev);
+    }
   };
 
   // Auto-slide effect every 6 seconds, only if video is not playing
@@ -54,15 +84,15 @@ const Testimonials = () => {
     if (isPlaying) return;
 
     const interval = setInterval(() => {
-      handleNext();
+      setActiveIndex((prev) => (prev + 1) % partnersData.length);
     }, 6000);
     
     return () => clearInterval(interval);
-  }, [isPlaying, activeIndex]);
+  }, [isPlaying]);
 
   // Sync active video playback
   useEffect(() => {
-    // Pause all other videos and reset to their start times
+    // Pause all inactive videos
     partnersData.forEach((partner) => {
       const vid = videoRefs.current[partner.id];
       if (vid && partner.id !== activeIndex) {
@@ -73,7 +103,7 @@ const Testimonials = () => {
 
     // Control the active video
     const activeVid = videoRefs.current[activeIndex];
-    if (activeVid) {
+    if (activeVid && loadedVideos[activeIndex]) {
       activeVid.muted = isMuted;
       if (isPlaying) {
         activeVid.play().catch(() => {
@@ -81,15 +111,9 @@ const Testimonials = () => {
         });
       } else {
         activeVid.pause();
-        activeVid.currentTime = partnersData[activeIndex].startTime || 0;
       }
     }
-  }, [activeIndex, isPlaying, isMuted]);
-
-  // Reset play state to paused when active index changes
-  useEffect(() => {
-    setIsPlaying(false);
-  }, [activeIndex]);
+  }, [activeIndex, isPlaying, isMuted, loadedVideos]);
 
   return (
     <section id="reviews" className="testimonials-sec">
@@ -150,6 +174,8 @@ const Testimonials = () => {
                       <div className="swiper-wrapper-custom">
                         {partnersData.map((partner) => {
                           const isActive = partner.id === activeIndex;
+                          const isLoaded = !!loadedVideos[partner.id];
+                          const isVideoPlaying = isActive && isPlaying && isLoaded;
                           
                           // Calculate diff relative to activeIndex
                           const diff = (partner.id - activeIndex + partnersData.length) % partnersData.length;
@@ -165,54 +191,61 @@ const Testimonials = () => {
                             <div 
                               key={partner.id}
                               className={`swiper-slide ${positionClass}`}
-                              onClick={() => {
-                                if (!isActive) {
-                                  setActiveIndex(partner.id);
-                                } else {
-                                  setIsPlaying(!isPlaying);
-                                }
-                              }}
+                              onClick={() => handleCardClick(partner.id)}
                             >
                               <div className="inner-card-wrapper">
-                                {/* Poster Image */}
-                                {partner.poster && (
-                                  <img 
-                                    src={partner.poster} 
-                                    alt={partner.name} 
-                                    className="card-poster-img"
-                                    style={{ 
-                                      opacity: isActive ? 0 : 1, 
-                                      zIndex: 3,
-                                      pointerEvents: 'none'
+                                {/* Poster Image - Always instant and lightweight */}
+                                <img 
+                                  src={partner.poster} 
+                                  alt={partner.name} 
+                                  className="card-poster-img"
+                                  loading="lazy"
+                                  style={{ 
+                                    opacity: isVideoPlaying ? 0 : 1, 
+                                    zIndex: isVideoPlaying ? 1 : 3,
+                                    pointerEvents: 'none'
+                                  }}
+                                />
+
+                                {/* Video element - ONLY mounted/streamed when requested */}
+                                {isLoaded && (
+                                  <video 
+                                    ref={(el) => {
+                                      videoRefs.current[partner.id] = el;
+                                      if (el && el.currentTime === 0 && partner.startTime) {
+                                        el.currentTime = partner.startTime;
+                                      }
                                     }}
+                                    onLoadedMetadata={(e) => {
+                                      if (partner.startTime) {
+                                        e.target.currentTime = partner.startTime;
+                                      }
+                                    }}
+                                    src={partner.video}
+                                    loop 
+                                    playsInline 
+                                    preload={isActive ? "auto" : "none"} 
+                                    muted={isMuted}
+                                    autoPlay={isActive && isPlaying}
+                                    className="card-video-elem"
+                                    style={{ zIndex: 2 }}
                                   />
                                 )}
 
-                                <video 
-                                  key={partner.video}
-                                  ref={(el) => {
-                                    videoRefs.current[partner.id] = el;
-                                    if (el && el.currentTime === 0 && partner.startTime) {
-                                      el.currentTime = partner.startTime;
-                                    }
-                                  }}
-                                  onLoadedMetadata={(e) => {
-                                    if (partner.startTime) {
-                                      e.target.currentTime = partner.startTime;
-                                    }
-                                  }}
-                                  src={partner.video}
-                                  loop 
-                                  playsInline 
-                                  preload="auto" 
-                                  muted
-                                  autoPlay={isActive}
-                                  className="card-video-elem"
-                                  style={{ zIndex: 2 }}
-                                />
+                                {/* Prominent Play Button Overlay when paused / not loaded */}
+                                {isActive && !isVideoPlaying && (
+                                  <div className="card-play-overlay">
+                                    <div className="card-play-btn-circle" title="Assistir depoimento">
+                                      <svg fill="currentColor" viewBox="0 0 384 512" width="22" height="22">
+                                        <path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/>
+                                      </svg>
+                                    </div>
+                                    <span className="card-play-label">Assistir depoimento</span>
+                                  </div>
+                                )}
 
-                                {/* Custom controls overlay for the active slide */}
-                                {isActive && (
+                                {/* Custom controls overlay for the active playing slide */}
+                                {isActive && isVideoPlaying && (
                                   <div className="video-custom-controls">
                                     <button 
                                       className="video-control-btn play-pause-btn"
@@ -272,4 +305,3 @@ const Testimonials = () => {
 };
 
 export default Testimonials;
-
