@@ -6,25 +6,25 @@ const Features = () => {
       id: '01',
       title: 'Múltiplas Conexões',
       description: 'Conecte e gerencie múltiplos números em uma única plataforma. Organize operações por cliente, equipe ou campanha mantendo total controle sobre cada conexão ativa.',
-      image: '/icons/conexoes.jpg'
+      image: './icons/conexoes.jpg'
     },
     {
       id: '02',
       title: 'Painel de Controle em Tempo Real',
       description: 'Acompanhe leads cadastrados e ativos, mensagens enviadas e recebidas, contas de envio, templates, fluxos e canais no dashboard.',
-      image: '/icons/painel.jpg'
+      image: './icons/painel.jpg'
     },
     {
       id: '03',
       title: 'Campanhas Inteligentes',
       description: 'Organize o planejamento e o histórico de campanhas. Em Transmissões, configure contas, modelos de mensagem e o envio para sua operação.',
-      image: '/icons/campanhas.jpg'
+      image: './icons/campanhas.jpg'
     },
     {
       id: '04',
       title: 'Automações Pós-Disparo',
       description: 'Transforme respostas em processos automatizados. Acione fluxos, aplique tags, valide informações, distribua leads e conduza cada contato automaticamente através da jornada definida.',
-      image: '/icons/automacao.jpg'
+      image: './icons/automacao.jpg'
     }
   ];
 

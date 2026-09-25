@@ -23,7 +23,7 @@ export default function Templates() {
             <div className="carousel-slide" key={copy + screen.image} aria-hidden={copy === 1 ? true : undefined}>
               <div className="project-card">
                 <div className={'project-app-image ' + (screen.capture ? 'is-capture' : '')}>
-                  <img src={'/app/' + screen.image} alt={copy === 0 ? screen.title + ' — visualização do MassFlow' : ''} loading="lazy" decoding="async" />
+                  <img src={'./app/' + screen.image} alt={copy === 0 ? screen.title + ' — visualização do MassFlow' : ''} loading="lazy" decoding="async" />
                 </div>
                 <div className="project-info"><h4 className="title">{screen.title}</h4></div>
               </div>
