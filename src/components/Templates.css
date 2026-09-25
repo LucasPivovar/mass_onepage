@@ -53,7 +53,7 @@
   display: flex;
   gap: 20px;
   width: max-content;
-  animation: scrollMarquee 24s linear infinite;
+  animation: scrollMarquee 38s linear infinite;
 }
 
 .carousel-track:hover {

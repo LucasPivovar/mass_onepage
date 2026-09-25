@@ -2,7 +2,9 @@ import './Templates.css';
 
 const screens = [
   { title: 'Dashboard em tempo real', image: 'dashboard-demo.jpg', capture: false },
+  { title: 'Análise de métricas e performance', image: 'analise.png', capture: false },
   { title: 'Planejamento de campanhas', image: 'campanhas.png', capture: true },
+  { title: 'Relatórios avançados', image: 'relatorios.png', capture: false },
   { title: 'Central de inteligência artificial', image: 'central-ia.png', capture: true },
 ];
 
