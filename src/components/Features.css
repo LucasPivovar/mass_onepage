@@ -116,3 +116,10 @@
     font-size: 32px;
   }
 }
+
+.feature-illustration { width: min(100%, 280px); height: 240px; object-fit: contain; align-self: center; mix-blend-mode: multiply; }
+.feature-app-preview { flex: 1.3; min-width: 0; margin: 0; overflow: hidden; border: 1px solid var(--border-color); border-radius: 16px; background: #faf8fd; }
+.feature-app-preview img { display: block; width: 100%; height: auto; }
+.feature-app-preview figcaption { padding: 10px 14px; color: var(--text-muted); font-size: 11px; text-align: center; }
+.feature-card.full-width .feature-content { flex: 1; }
+@media (max-width: 768px) { .feature-illustration { height: 200px; } .feature-app-preview { flex: auto; } }

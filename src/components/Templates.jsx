@@ -1,73 +1,34 @@
-import React, { useEffect, useRef } from 'react';
 import './Templates.css';
 
-const Templates = () => {
-  const sectionRef = useRef(null);
+const screens = [
+  { title: 'Dashboard em tempo real', image: 'dashboard-demo.jpg', capture: false },
+  { title: 'Planejamento de campanhas', image: 'campanhas.png', capture: true },
+  { title: 'Central de inteligência artificial', image: 'central-ia.png', capture: true },
+];
 
-  const templates = [
-    { title: 'Integração com OpenAI' },
-    { title: 'WhatsApp Business' },
-    { title: 'Instagram Direct' },
-    { title: 'TikTok Business' },
-    { title: 'Telegram Bots' },
-    { title: 'Fluxos Inteligentes' },
-    { title: 'Construtor de Bots' },
-    { title: 'Inbox Omnichannel' },
-    { title: 'Gestão de Contatos' },
-    { title: 'Webhooks e APIs' },
-    { title: 'Integrações Externas' },
-    { title: 'Chat ao Vivo' },
-    { title: 'Agentes de IA' },
-    { title: 'Multiusuários' },
-    { title: 'Gestão de Equipes' },
-    { title: 'Controle de Permissões' },
-    { title: 'Relatórios Analíticos' },
-    { title: 'Dashboard em Tempo Real' },
-    { title: 'Tags Inteligentes' },
-    { title: 'Integrações com E-Commerce' }
-  ];
-
+export default function Templates() {
   return (
-    <section id="templates" ref={sectionRef} className="templates-sec section-padding">
-
+    <section id="templates" className="templates-sec section-padding">
       <div className="container">
         <div className="sec-title text-center sec-title-light reveal">
-          <h2 className="title">Mais de 50 funcionalidades para<br/>Automatizar e Escalar sua Operação.</h2>
-          <p className="subtitle">Da automação de conversas ao atendimento omnichannel, a MassFlow reúne<br/>tudo o que sua empresa precisa para crescer sem depender de múltiplas plataformas.</p>
+          <h2 className="title">Conheça o MassFlow por dentro.</h2>
+          <p className="subtitle">Campanhas, inteligência artificial e indicadores em uma única plataforma.</p>
         </div>
       </div>
-
       <div className="carousel-wrapper reveal-carousel">
         <div className="carousel-track">
-          {templates.map((tpl, index) => (
-            <div className="carousel-slide" key={`a-${index}`}>
+          {[0, 1].map((copy) => screens.map((screen) => (
+            <div className="carousel-slide" key={copy + screen.image} aria-hidden={copy === 1 ? true : undefined}>
               <div className="project-card">
-                <div className="project-img-placeholder">
-                  <div className="mockup-content"></div>
+                <div className={'project-app-image ' + (screen.capture ? 'is-capture' : '')}>
+                  <img src={'/app/' + screen.image} alt={copy === 0 ? screen.title + ' — visualização do MassFlow' : ''} loading="lazy" decoding="async" />
                 </div>
-                <div className="project-info">
-                  <h4 className="title">{tpl.title}</h4>
-                </div>
+                <div className="project-info"><h4 className="title">{screen.title}</h4></div>
               </div>
             </div>
-          ))}
-          {/* Duplicate set for infinite loop */}
-          {templates.map((tpl, index) => (
-            <div className="carousel-slide" key={`b-${index}`}>
-              <div className="project-card">
-                <div className="project-img-placeholder">
-                  <div className="mockup-content"></div>
-                </div>
-                <div className="project-info">
-                  <h4 className="title">{tpl.title}</h4>
-                </div>
-              </div>
-            </div>
-          ))}
+          )))}
         </div>
       </div>
     </section>
   );
-};
-
-export default Templates;
+}

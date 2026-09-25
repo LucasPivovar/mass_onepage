@@ -1,4 +1,3 @@
-import React from 'react';
 import './Hero.css';
 
 const Hero = () => {
@@ -32,31 +31,19 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="floating-badge-container badge-instagram-pos">
-        <div className="platform-badge badge-instagram">
-          <i className="fa-brands fa-instagram"></i>
-          <span>Instagram</span>
+      <div className="floating-badge-container badge-telegram-pos">
+        <div className="platform-badge badge-telegram">
+          <i className="fa-brands fa-telegram"></i>
+          <span>Telegram</span>
         </div>
       </div>
 
-      <div className="floating-badge-container badge-tiktok-pos">
-        <div className="platform-badge badge-tiktok">
-          <i className="fa-brands fa-tiktok"></i>
-          <span>TikTok</span>
-        </div>
-      </div>
 
-      <div className="floating-badge-container badge-messenger-pos">
-        <div className="platform-badge badge-messenger">
-          <i className="fa-brands fa-facebook-messenger"></i>
-          <span>Messenger</span>
-        </div>
-      </div>
 
-      <div className="floating-badge-container badge-phone-pos">
-        <div className="platform-badge badge-phone">
-          <i className="fa-solid fa-phone"></i>
-          <span>Telefone</span>
+      <div className="floating-badge-container badge-webchat-pos">
+        <div className="platform-badge badge-webchat">
+          <i className="fa-solid fa-comments"></i>
+          <span>Chat no Site</span>
         </div>
       </div>
 
@@ -70,9 +57,9 @@ const Hero = () => {
       <div className="container">
         <div className="hero-info">
           <div className="hero-content">
-            <h1 className="title">Tudo o que sua operação precisa para escalar em um só Lugar</h1>
+            <h1 className="title">Tudo o que sua operação precisa para escalar em um só lugar</h1>
             <p className="subtitle">
-              Automatize atendimentos, alcance milhares de contatos e gerencie múltiplos canais sem trocar de plataforma.
+              Automatize atendimentos, organize seus contatos e gerencie múltiplos canais sem trocar de plataforma.
             </p>
             <div className="hero-btn">
               <a href="/#contato" className="btn btn-primary">Falar Conosco &rarr;</a>
@@ -84,17 +71,7 @@ const Hero = () => {
           <div id="quem-somos" className="hero-image-wrapper">
             <div className="placeholder-laptop">
                <div className="placeholder-screen">
-                  {/* Detailed screen preview displaying a live demo loop video */}
-                  <video 
-                    loop 
-                    autoPlay 
-                    muted 
-                    playsInline 
-                    className="laptop-screen-video"
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                  >
-                    <source src="https://cdn.pixabay.com/video/2021/04/12/70868-537482598_tiny.mp4" type="video/mp4" />
-                  </video>
+                  <img src="/app/dashboard-demo.jpg" alt="Dashboard MassFlow com indicadores e dados demonstrativos" className="laptop-screen-image" fetchPriority="high" width="1704" height="924" />
                </div>
             </div>
           </div>
@@ -103,28 +80,9 @@ const Hero = () => {
 
       {/* Brand Logos Ticker - Overlapped by Laptop Mockup */}
       <div className="hero-logos-container reveal reveal-up">
-        <p className="logos-title">Confiado por mais de 10 mil empresas em todo o mundo</p>
-        <div className="logos-slider">
-          <div className="logos-track">
-            <span><i className="fa-brands fa-dropbox"></i> Dropbox</span>
-            <span><i className="fa-brands fa-hubspot"></i> HubSpot</span>
-            <span><i className="fa-brands fa-quora"></i> Quora</span>
-            <span><i className="fa-brands fa-medium"></i> Medium</span>
-            <span><i className="fa-brands fa-figma"></i> Figma</span>
-            <span><i className="fa-brands fa-slack"></i> Slack</span>
-            <span><i className="fa-brands fa-stripe"></i> Stripe</span>
-            <span><i className="fa-solid fa-link"></i> Linktree</span>
-            
-            {/* Duplicated for smooth loop */}
-            <span><i className="fa-brands fa-dropbox"></i> Dropbox</span>
-            <span><i className="fa-brands fa-hubspot"></i> HubSpot</span>
-            <span><i className="fa-brands fa-quora"></i> Quora</span>
-            <span><i className="fa-brands fa-medium"></i> Medium</span>
-            <span><i className="fa-brands fa-figma"></i> Figma</span>
-            <span><i className="fa-brands fa-slack"></i> Slack</span>
-            <span><i className="fa-brands fa-stripe"></i> Stripe</span>
-            <span><i className="fa-solid fa-link"></i> Linktree</span>
-          </div>
+        <p className="logos-title">Atendimento, campanhas e automação em um só lugar</p>
+        <div className="verified-capabilities" aria-label="Recursos da plataforma">
+          <span>WhatsApp</span><span>Telegram</span><span>Chat no Site</span><span>Agentes de IA</span><span>Bots e fluxos</span>
         </div>
       </div>
     </section>

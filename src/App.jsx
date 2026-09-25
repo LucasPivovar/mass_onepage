@@ -1,10 +1,8 @@
-import React from 'react'
 import Header from './components/Header'
 import Hero from './components/Hero'
 import WorkingProcess from './components/WorkingProcess'
 import Features from './components/Features'
 import Templates from './components/Templates'
-import WhyChooseUs from './components/WhyChooseUs'
 import Testimonials from './components/Testimonials'
 import FAQ from './components/FAQ'
 import Footer from './components/Footer'
@@ -42,7 +40,6 @@ function App() {
         <WorkingProcess />
         <Features />
         <Templates />
-        <WhyChooseUs />
         <Testimonials />
         <FAQ />
       </>

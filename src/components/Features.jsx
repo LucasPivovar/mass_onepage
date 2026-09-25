@@ -1,4 +1,3 @@
-import React from 'react';
 import './Features.css';
 
 const Features = () => {
@@ -7,25 +6,25 @@ const Features = () => {
       id: '01',
       title: 'Múltiplas Conexões',
       description: 'Conecte e gerencie múltiplos números em uma única plataforma. Organize operações por cliente, equipe ou campanha mantendo total controle sobre cada conexão ativa.',
-      imgClass: 'feature-img-1'
+      image: '/icons/conexoes.jpg'
     },
     {
       id: '02',
       title: 'Painel de Controle em Tempo Real',
-      description: 'Acompanhe contatos ativos, disparos realizados, taxa de leitura, volume mensal e desempenho das campanhas em um único dashboard.',
-      imgClass: 'feature-img-2'
+      description: 'Acompanhe leads cadastrados e ativos, mensagens enviadas e recebidas, contas de envio, templates, fluxos e canais no dashboard.',
+      image: '/icons/painel.jpg'
     },
     {
       id: '03',
       title: 'Campanhas Inteligentes',
-      description: 'Crie campanhas segmentadas, acompanhe entregas, leituras e resultados em tempo real. Controle campanhas ativas, agendadas, pausadas ou concluídas com total visibilidade operacional.',
-      imgClass: 'feature-img-3'
+      description: 'Organize o planejamento e o histórico de campanhas. Em Transmissões, configure contas, modelos de mensagem e o envio para sua operação.',
+      image: '/icons/campanhas.jpg'
     },
     {
       id: '04',
       title: 'Automações Pós-Disparo',
       description: 'Transforme respostas em processos automatizados. Acione fluxos, aplique tags, valide informações, distribua leads e conduza cada contato automaticamente através da jornada definida.',
-      imgClass: 'feature-img-4'
+      image: '/icons/automacao.jpg'
     }
   ];
 
@@ -38,16 +37,13 @@ const Features = () => {
         </div>
 
         <div className="features-grid">
-          {features.map((feature, index) => (
-            <div className="feature-card reveal" key={index}>
+          {features.map((feature) => (
+            <div className="feature-card reveal" key={feature.id}>
+              <img className="feature-illustration" src={feature.image} alt="" width="320" height="320" loading="lazy" decoding="async" />
               <div className="feature-content">
                 <span className="feature-dot">{feature.id}</span>
                 <h4 className="title">{feature.title}</h4>
                 <p>{feature.description}</p>
-              </div>
-              <div className={`feature-img-placeholder ${feature.imgClass}`}>
-                {/* Placeholder for the little cards/images in the feature */}
-                <div className="inner-card"></div>
               </div>
             </div>
           ))}
@@ -57,11 +53,9 @@ const Features = () => {
              <div className="feature-content">
                 <span className="feature-dot">05</span>
                 <h4 className="title">Relatórios e Performance</h4>
-                <p>Acompanhe métricas de entrega, leitura, engajamento e desempenho por campanha. Identifique oportunidades, compare resultados e tome decisões baseadas em dados reais.</p>
+                <p>Consulte métricas e relatórios do seu workspace, aplique filtros de período e acompanhe os indicadores da operação.</p>
              </div>
-             <div className="feature-img-placeholder feature-img-5">
-                <div className="inner-card"></div>
-             </div>
+             <figure className="feature-app-preview"><img src="/app/dashboard-demo.jpg" alt="Indicadores do dashboard MassFlow com dados demonstrativos" width="1704" height="924" loading="lazy" decoding="async" /><figcaption>Visão da plataforma · dados demonstrativos</figcaption></figure>
           </div>
         </div>
       </div>
@@ -70,3 +64,4 @@ const Features = () => {
 };
 
 export default Features;
+

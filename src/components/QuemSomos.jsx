@@ -1,4 +1,3 @@
-import React from 'react';
 import './QuemSomos.css';
 
 const QuemSomos = () => {
@@ -22,7 +21,7 @@ const QuemSomos = () => {
           <div className="about-card reveal reveal-left">
             <h3 className="about-card-title">Nossa História</h3>
             <p className="about-card-desc">
-              A MassFlow nasceu com o propósito de descomplicar o atendimento ao cliente e a automação de vendas. Percebemos que as empresas perdiam muito tempo alternando entre diversas ferramentas para gerenciar canais como WhatsApp, Instagram e Telegram. 
+              A MassFlow nasceu com o propósito de descomplicar o atendimento ao cliente e a automação de vendas. Percebemos que as empresas perdiam muito tempo alternando entre diversas ferramentas para gerenciar canais como WhatsApp, Telegram e Chat no Site. 
             </p>
             <p className="about-card-desc">
               Por isso, criamos uma solução consolidada e robusta que centraliza e otimiza todas as interações da sua operação em um único lugar, trazendo mais eficiência, clareza e resultados.
@@ -36,7 +35,7 @@ const QuemSomos = () => {
               Ajudamos a sua empresa a escalar através de disparos inteligentes em massa, construtor visual de chatbots sem código, integrações dinâmicas com OpenAI (agentes de IA personalizados) e relatórios em tempo real.
             </p>
             <p className="about-card-desc">
-              Com a MassFlow, sua operação reduz o tempo ocioso dos atendentes e conecta-se instantaneamente com milhares de leads de forma personalizada e eficiente.
+              Com a MassFlow, sua operação reduz o tempo ocioso dos atendentes e organiza o relacionamento com seus leads de forma personalizada e eficiente.
             </p>
           </div>
 

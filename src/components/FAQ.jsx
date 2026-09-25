@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './FAQ.css';
 
 const faqs = [
-  { q: 'O que é a MassFlow?', a: 'A MassFlow é uma plataforma omnichannel de comunicação e automação que centraliza canais como WhatsApp, Instagram e Telegram para escalar suas vendas e atendimento.' },
-  { q: 'Preciso saber programar para usar a plataforma?', a: 'Não! Nosso construtor de fluxos e chatbots é totalmente visual e sem código (no-code), permitindo que qualquer pessoa crie automações inteligentes em minutos.' },
-  { q: 'Quais canais de comunicação posso integrar?', a: 'Você pode integrar WhatsApp Business, Instagram Direct, Telegram, Facebook Messenger e diversos outros canais diretamente na nossa caixa de entrada centralizada.' },
-  { q: 'Como funcionam os disparos em massa?', a: 'Você pode importar sua lista de contatos, segmentar seu público e programar disparos automáticos e personalizados via WhatsApp de forma segura e eficiente.' },
+  { q: 'O que é a MassFlow?', a: 'A MassFlow é uma plataforma omnichannel de comunicação e automação que centraliza canais como WhatsApp, Telegram e Chat no Site para escalar suas vendas e atendimento.' },
+  { q: 'Preciso saber programar para usar a plataforma?', a: 'O MassFlow oferece um construtor visual de bots e fluxos para organizar o atendimento e suas automações.' },
+  { q: 'Quais canais de comunicação posso integrar?', a: 'A plataforma oferece WhatsApp, bots do Telegram e Chat no Site para centralizar o atendimento. A disponibilidade depende da configuração de cada canal no seu workspace.' },
+  { q: 'Como funcionam os disparos em massa?', a: 'Organize suas campanhas e utilize Transmissões para selecionar as contas, os modelos de mensagem e o público do envio.' },
   { q: 'A plataforma oferece integração com Inteligência Artificial?', a: 'Sim, a MassFlow possui integração direta com a OpenAI, permitindo que você crie agentes de IA personalizados para atender seus clientes de forma humana e autônoma.' },
 ];
 

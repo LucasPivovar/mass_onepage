@@ -100,7 +100,7 @@
   box-shadow: 0 8px 28px rgba(37, 211, 102, 0.4);
 }
 
-.badge-instagram {
+.badge-telegram {
   background: linear-gradient(135deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
   box-shadow: 0 8px 28px rgba(220, 39, 67, 0.4);
 }
@@ -116,7 +116,7 @@
   box-shadow: 0 8px 28px rgba(0, 106, 255, 0.4);
 }
 
-.badge-phone {
+.badge-webchat {
   background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
   box-shadow: 0 8px 28px rgba(59, 130, 246, 0.4);
 }
@@ -146,7 +146,7 @@
 }
 
 /* Instagram: Direita superior - colado na borda do laptop */
-.badge-instagram-pos {
+.badge-telegram-pos {
   top: 50%;
   right: 13%;
   animation: floatAnim2 7s ease-in-out infinite;
@@ -170,7 +170,7 @@
 }
 
 /* Phone: Esquerda inferior - colado na borda do laptop */
-.badge-phone-pos {
+.badge-webchat-pos {
   top: 73%;
   left: 13%;
   animation: floatAnim1 8s ease-in-out infinite;
@@ -468,3 +468,10 @@
     width: 100%;
   }
 }
+
+/* Preserve the complete application screenshot inside the laptop. */
+.placeholder-laptop { aspect-ratio: 1704 / 950; }
+.laptop-screen-image { display: block; width: 100%; height: 100%; object-fit: contain; object-position: top; }
+
+.badge-telegram { background: linear-gradient(135deg,#39afe8,#1688cf); box-shadow: 0 8px 28px #1688cf44; }
+.verified-capabilities { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px 32px; padding: 0 24px; color: var(--text-muted); font-weight: 600; }
