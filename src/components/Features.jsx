@@ -48,15 +48,6 @@ const Features = () => {
             </div>
           ))}
 
-          {/* Full width feature card */}
-          <div className="feature-card full-width reveal">
-             <div className="feature-content">
-                <span className="feature-dot">05</span>
-                <h4 className="title">Relatórios e Performance</h4>
-                <p>Consulte métricas e relatórios do seu workspace, aplique filtros de período e acompanhe os indicadores da operação.</p>
-             </div>
-             <figure className="feature-app-preview"><img src="/app/dashboard-demo.jpg" alt="Indicadores do dashboard MassFlow com dados demonstrativos" width="1704" height="924" loading="lazy" decoding="async" /><figcaption>Visão da plataforma · dados demonstrativos</figcaption></figure>
-          </div>
         </div>
       </div>
     </section>
